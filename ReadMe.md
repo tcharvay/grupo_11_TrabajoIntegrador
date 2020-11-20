@@ -22,7 +22,7 @@ Tomas Charvay
 *De Buenos Aires, Capital. 34 años, entrando en el mundo de la programación con la intención de poder desarrollar la profesión.*
 
 Pedro Gomez
-
+*De Boogota (colombia). 33 años, Feliz de aprender el oficio de programar y con la intencion de seguir ejerciendolo  día a día*
 
 Marcelo Caresano 
 *De Córdoba, 38 años, con ganas de seguir aprendiendo y progresando con el equipo.*
