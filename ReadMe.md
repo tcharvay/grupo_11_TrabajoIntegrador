@@ -11,10 +11,10 @@
 **Páginas referentes**
 
 * https://mostobebidas.mercadoshops.com.ar/
-* https://vinotecaligier.com/ ...
-* https://www.vinosyspirits.com/vinos/tintos.html?gclid=CjwKCAiAtK79BRAIEiwA4OskBozhdCbJ6Ruv35yJUNiwRFSmyGsLmoiFceEJUyWealBhvRCyRA_iURoCQlIQAvD_BwE ...
+* https://vinotecaligier.com/
+* https://www.vinosyspirits.com/vinos/tintos.html?gclid=CjwKCAiAtK79BRAIEiwA4OskBozhdCbJ6Ruv35yJUNiwRFSmyGsLmoiFceEJUyWealBhvRCyRA_iURoCQlIQAvD_BwE
 * https://www.mercadolibre.com.ar/ (Pagina referente al ser uno de los sitios web mas utilizado para el e-commerce.)
-* https://www.firstleaf.club/ (Pagina exclusiva de venta de vinos de la cual eventualmente podriamos tomar ideas para mejorasgit)
+* https://www.firstleaf.club/ (Pagina exclusiva de venta de vinos de la cual eventualmente podriamos tomar ideas para mejoras.)
 
 **Grupo del Proyecto**
 
