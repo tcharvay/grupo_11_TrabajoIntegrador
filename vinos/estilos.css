@@ -1,0 +1,206 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat+Alternates);
+
+* {
+    margin: 0;
+    padding:0;
+    --color: rgba(0,47,86,1);
+}
+
+body {
+  
+}
+header{
+  background-color: var(--color);
+  display: flex;
+  justify-content: space-around;
+   margin: auto;
+   padding: 0%;
+  align-items:center ;
+  
+}
+.header-imagen {
+width: 10%;
+margin: auto;
+}
+.carrito{
+margin: auto;
+background-color: rgb(26, 188, 156); 
+width: 100px;
+height: 30px;
+border-radius: 30%;
+border: 7px solid rgb(26, 188, 156);
+}
+
+
+.field {
+  display:flex;
+  position:realtive;
+  margin:1.5em auto;
+  width:70%;
+  flex-direction:row;
+  box-shadow:
+   1px 1px 0 rgb(22, 160, 133),
+   2px 2px 0 rgb(22, 160, 133),
+   3px 3px 0 rgb(22, 160, 133),
+   4px 4px 0 rgb(22, 160, 133),
+   5px 5px 0 rgb(22, 160, 133),
+   6px 6px 0 rgb(22, 160, 133),
+   7px 7px 0 rgb(22, 160, 133)
+  ;
+}
+
+.field>input[type=text],
+.field>button {
+  display:block;
+  font:1.2em 'Montserrat Alternates';
+}
+
+.field>input[type=text] {
+  flex:1;
+  padding:0.6em;
+  border:0.2em solid rgb(26, 188, 156);
+}
+
+.field>button {
+  padding:0.6em 0.8em;
+  background-color:rgb(26, 188, 156);
+  color:white;
+  border:none;
+}
+nav{
+  background-color: var(--color);
+   display: flex;
+  justify-content: space-around;
+   margin: auto;
+   padding: 0%;
+  align-items:center ;
+  font-size: 22px;
+ 
+}
+.nav-a{
+  text-decoration: none;
+  color: aliceblue;
+}
+.nav-a:hover{
+  color:rgb(26, 188, 156);
+}
+
+.banner{
+  width: 99%;
+   height: 200px;
+   border: 7px solid rgb(26, 188, 156);
+   background-size: 100% 100%;
+   animation: banner 10s infinite;
+    
+}
+@keyframes banner{
+  0%,30%{
+    background-image: url(./img/diciembre-banner.jpg);
+    opacity: 1;
+  }
+  31%,34%{
+    opacity: 0.1;
+  }
+  35%,65%{
+    background-image: url(./img/diciembre2.jpg);
+    opacity: 1;
+  }
+  66%,69%{
+    opacity: 0.1;
+  }
+  70%,100%{
+    opacity: 1;
+    background-image: url(./img/argentina.jpg);
+  }
+
+}
+.cuerpo{
+  background-color:var(--color);  
+  width: 100%;
+  height: 70vh;
+  padding: 0%;
+  display: flex;
+    }
+  .logo{
+    width: 50%;
+    margin-left: 25%;
+   
+  }  
+.costado-izq{
+  padding: 0%;
+  width: 30%;
+  height: 100%;
+  border:7px solid rgb(26, 188, 156);
+ 
+}
+.lista{
+  font:1.2em 'Montserrat Alternates';
+  text-decoration: none;
+  color: antiquewhite;
+}
+.lista:hover{
+  color:rgb(26, 188, 156) ;
+}
+.a-costado{
+  list-style: none;
+  padding: 20%;
+  font-size: 30px;
+}
+.a-costado ul li{
+  color: aliceblue;
+}
+.costado-der{
+  border:7px solid rgb(26, 188, 156);
+  background-color:var(--color);
+  width: 70%;
+  height: 100%;
+}
+.titulo-productos{
+  height: 100px;
+  display: grid;
+  align-items: center;
+}
+
+.formato-texto{
+  font:40px 'Montserrat Alternates';
+  text-align: center;
+  color: aliceblue;
+
+}
+.imagenes{
+  margin-top: 1%;
+  background-color:var(--color);
+  width: 100%;
+  height: 45%;
+    display: flex;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+
+}
+.imagenes img{
+  background-color: var(--color);
+  width: 150px;
+  height: 300px;
+  margin: 10px;
+  line-height: 20px  ;
+  border:2px solid rgb(26, 188, 156)
+}
+.footer{
+  padding: 2%;
+  border:7px solid rgb(26, 188, 156);
+  background-color: var(--color);
+  display: flex;
+  justify-content: space-around;
+}
+.footer li{
+  color: aliceblue;
+}
+
+.footer li a{
+    color:aliceblue;
+    font:22px 'Montserrat Alternates';
+    text-decoration: none;
+}
+.footer li a:hover{
+  color:rgb(26, 188, 156);
+}

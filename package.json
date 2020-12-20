@@ -1,0 +1,22 @@
+{
+  "name": "grupo_11_trabajointegrador",
+  "version": "1.0.0",
+  "description": "**Temática del Sitio**",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tcharvay/grupo_11_TrabajoIntegrador.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tcharvay/grupo_11_TrabajoIntegrador/issues"
+  },
+  "homepage": "https://github.com/tcharvay/grupo_11_TrabajoIntegrador#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
