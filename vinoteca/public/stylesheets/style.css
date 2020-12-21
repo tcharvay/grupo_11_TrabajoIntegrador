@@ -1,8 +1,317 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* Imports de Fuentes, iconos, etc */
+
+
+/* Font Google Apis */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap'); 
+
+/* Font Awesome */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
+
+
+/* General */
+
+* { 
+  box-sizing: content-box;
+  padding: 0;
+  margin: 0;
 }
 
-a {
-  color: #00B7FF;
+body {
+   font-family: Roboto, Arial, Helvetica, sans-serif;
+   background-color: black;
+   display: flex;
+   flex-wrap:wrap;
+}   
+.container {
+  width: 95%;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  align-content: center;
+  
+  }
+
+
+footer{
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  background-color: black;
+}
+
+  /* Elementos del Header   */
+
+header{
+  width: 100%;
+max-width: 100%;
+  display: flex;
+  justify-content:space-between;
+  margin:initial; 
+  background-color: black;
+  
+}
+
+.nav-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 30px;
+  box-sizing: border-box;
+  
+}
+
+.header-imagen {
+  width: 200px;
+  max-width: 100%;
+  object-fit: contain;
+  height: auto;
+}
+
+.buscador{
+  display: flex;
+  padding: 10px;
+  box-sizing: border-box;
+  
+}
+
+#input-buscar{
+  padding:  5px 10px;
+  box-sizing: border-box;
+  font-size: 20px;
+  width:  550px;
+  color: #660708;
+  text-align: left;
+  border-radius: 10px;
+}
+
+a{
+  font-size: 20px;
+  color: #f5f3f4;
+  display: flex;
+  padding: inherit;
+  text-align: center;
+  align-content: center;
+}
+
+i {
+  font-size: 24px;
+  color: #b1a7a6;
+  align-content: center;
+}
+
+
+/* Banner superior */
+
+.banner{
+   width: auto;
+   max-width: 100%;
+   height: 300px;
+   background-size: 100% 100%;
+   animation: banner 10s infinite;
+   object-fit: contain;
+
+    
+}
+@keyframes banner{
+  0%,30%{
+    background-image: url(../images/diciembre-banner.jpg);
+    opacity: 1;
+  }
+  31%,34%{
+    opacity: 0.1;
+  }
+  35%,65%{
+    background-image: url(../images//diciembre2.jpg);
+    opacity: 1;
+  }
+  66%,69%{
+    opacity: 0.1;
+  }
+  70%,100%{
+    opacity: 1;
+    background-image: url(../images//argentina.jpg);
+  }
+
+}
+
+.nav-menu{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border: black 1px solid;
+  background-color: #660708;
+  
+}
+
+/* Menu Izquierdo */
+
+.nav-a{
+ text-decoration: none;
+ color: #d3d3d3;
+ display: flex;
+ justify-content: space-around;
+ margin: auto;
+ font-size: 22px;
+}
+
+.cepas {
+text-decoration:underline;
+  color: #d3d3d3;
+  font-style: italic;
+  
+}
+
+
+.cuerpo{
+  width: 100%;
+  height: 70%;
+  display: flex;
+}
+  
+.costado-izq{
+  padding: 0;
+  width: 30%;  
+  
+}
+.lista{
+   text-decoration: none;
+ }
+
+.a-costado{
+  list-style: none;
+  padding: 10%;
+  font-size: 24px;
+}
+.costado-der{
+  width: 100%;
+  height: 100%;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+.titulo-productos{
+  height: 100px;
+  display: grid;
+  align-items: center;
+  color: #BA181B;
+  text-align: center;
+}
+
+
+/**  listaProductos   **/
+
+.list-prod{
+  width: 100%;
+  display: flex;
+  flex-wrap:wrap;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+article {
+  display: flex;
+  width: 30%;
+  padding: 10px;
+  background:#b1a7a6;
+  border: #BA181B 1px solid;
+  flex-direction:initial;
+  align-content: center;
+
+}   
+
+.list-det-prod{
+
+  box-sizing: border-box;
+  text-align: center;  
+}
+
+#list-img{
+  max-width: 100% ;
+  object-fit: contain;
+  width: 95%;
+}
+
+
+
+
+
+
+/**  detalle Producto   **/
+
+.art-det{
+  width: 100%;
+  align-content: center;
+  padding: 0px;
+  background: #d3d3d3;
+  display: flex;
+
+}
+
+.det-prod{
+display:flex;
+width: 100%;
+
+}
+
+.img-prod{
+  box-sizing: border-box;
+  width: 70%;
+  max-width: 100%;
+}
+
+#img-prod-det{
+  width: 100%;
+}
+
+.buy-prod{
+ text-align: center;
+  padding: 10px;
+  width: 30%;
+  
+}
+.price{
+  font-style: italic;
+  font-weight: bold;
+  font-size: 24px;
+  
+}
+.cuotas{
+  font-size: 9px;
+  
+  }
+
+  
+.car-button{
+  padding: 8px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.buy-button{
+  padding: 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  background-color: #BA181B;
+  color: white;
+}
+
+.desc-prod{
+  display:flow-root;
+  padding: 10px;
+  width: 100%;
+}
+ .titulo-Vino{
+   color:#660708 ;
+  
+  }
+
+.desc-prod h5{
+ font-weight: bold;
+}
+
+.desc-prod p{
+  font-size: 10px;
 }
