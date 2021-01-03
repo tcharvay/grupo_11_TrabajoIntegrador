@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleven Wines - Registro</title>
+    <link rel="stylesheet" href="./Design/Css/style.css">
+</head>
+<body>
+        <section class="tituloRegistro"><h2>Completa tus datos</h2></section>
+        
+        <section class="tablasRegistro">
+            <table>
+            <form action=“register.html” method=“POST”>
+                <tr> 
+                <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
+                </tr>
+                <tr> 
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                <input type="number" id="dni" name="dni" placeholder="DNI"required>
+                </tr>
+                <tr> 
+                <input type="number" id="tel" name="tel" placeholder="Teléfono"required>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                <input type=“email” id=“email” name=“email”  placeholder="Email"required>
+                </tr>
+                <tr>
+                <input type=“email” id=“email” name=“email” placeholder="Confirmación Email"  required>
+                </tr>
+            </table>          
+            <table>
+                <tr>
+                <input type="password" id="Contrasena" name='Contrasena' placeholder="Clave" required>
+                <input type="password" id="Contrasena" name='Contrasena' placeholder="Confirmación Clave"required>
+                </tr>
+            </table>
+            <input type="checkbox" required><small>Acepto terminos y condiciones</small>   
+            </input>
+            <p>          
+            <button class="submit"type=“submit”>Enviar</button>
+            </p>
+            </form>
+        </section>
+      
+</body>
+</html>
