@@ -5,6 +5,7 @@ const path = require('path');
 const indexRouter = require('./routers/index');
 const productsRouter = require('./routers/products');
 const usersRouter = require('./routers/users');
+const carritoRouter = require ('./routers/carrito')
 
 
 // view engine setup
@@ -18,6 +19,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products',productsRouter);
+app.use('/carrito',carritoRouter);
 
 
 
