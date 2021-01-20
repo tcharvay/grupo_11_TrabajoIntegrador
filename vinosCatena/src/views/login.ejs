@@ -1,32 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catena Zapata - Login</title>
-    <link rel="stylesheet" href="../css/style.css">
-</head>
+<%- include('partials/header.ejs')%>
+
 <body>
-    <div class="container">
-
-        <header>
-            <nav class="nav-header">
-            <div class="imagen">
-                <a href="../ " ><img  src="/images/catenaLogoFN.jpeg" class="header-imagen"> </a>
-            </div>
-            <div class="buscador">
-              <input type="text" id="input-buscar" placeholder="Que desea tomar ?" />
-              <a href=""><i class="fas fa-search"></i> Buscar </a>
-            </div>
-            <div class="carrito">
-               <a href="#"><i class="fas fa-shopping-cart"></i> Carrito </a>
-            </div>
-            <div class="usuarios">
-              <a href="./login"><i class="fa fa-user"></i> Usuarios </a>
-           </div>
-          </nav>
-            </header>
-
 
     <div class="login">
         <h2>Ingreso de usuario</h2>
@@ -50,13 +24,10 @@
                 <a href="./register">Registrarse</a></small>
             
             </section>
+    </div> 
     </div>
-
-    <footer>
-        Footer
-     </footer>
-
-</div>
-    
+    <br>
+    <br>
+    <br> 
+    <%- include('partials/footer.ejs')%>   
 </body>
-</html>

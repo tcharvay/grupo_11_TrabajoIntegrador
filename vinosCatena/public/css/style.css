@@ -185,11 +185,15 @@ text-decoration:underline;
   
 .costado-izq{
   padding: 0;
-  width: 30%;  
+  width: 30%;
+  color:  B1A7A6;
+
   
 }
 .lista{
    text-decoration: none;
+   color: #B1A7A6;
+
  }
 
 .a-costado{

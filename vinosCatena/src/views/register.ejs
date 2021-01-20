@@ -1,35 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catena Zapata - Registro</title>
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-    <div class="container">
+<%- include('partials/header.ejs')%>
 
-        <header>
-            <nav class="nav-header">
-            <div class="imagen">
-              <a href="../ " ><img  src="/images/catenaLogoFN.jpeg" class="header-imagen"> </a>
-            </div>
-            <div class="buscador">
-              <input type="text" id="input-buscar" placeholder="Que desea tomar ?" />
-              <a href=""><i class="fas fa-search"></i> Buscar </a>
-            </div>
-            <div class="carrito">
-               <a href="#"><i class="fas fa-shopping-cart"></i> Carrito </a>
-            </div>
-            <div class="usuarios">
-              <a href="./login"><i class="fa fa-user"></i> Usuarios </a>
-           </div>
-          </nav>
-            </header>
+<body>
 <div class="login">
-    <h2>Registro de Usuario</h2>
-            <br>
-           
+    <h2>Registro de Usuario</h2>           
             <section>
                 <form class='formulario' action="" method="POST">
                     <div class='inputForm'>
@@ -39,12 +12,7 @@
                     <div class='inputForm'>
                         <i class="fa fa-user icon"></i>    
                         <input id="nombre" name="nombre" type="text" placeholder="Nombre">
-                    </div>
-                    <div class='inputForm'>
-                        <i class="fa fa-phone icon" ></i>    
-                        <input id="telefono" name="telefono" type="number" placeholder="telefono">
-                    </div>
-                                  
+                    </div>  
                     <div class='inputForm'>
                         <i class="fas fa-envelope icon"></i>    
                         <input id="email" name="email" type="email" placeholder="Ingrese su Email">
@@ -59,7 +27,7 @@
                         <input id="passwordC" name="passwordC" type="password" placeholder="Confirmar Contraseña">
                     </div>
                     <div>
-                        <input class="terminos" type="checkbox" required>Acepto terminos y condiciones>  
+                        <input class="terminos" type="checkbox" required> <small> Acepto terminos y condiciones   </small>
                       </div>
                     <div class="buttons">
                         <button class='submitLogin' type="reset" value='limpiar'>Borrar</button>
@@ -71,6 +39,11 @@
             </section>
         </div>
         </div>
+        <br> 
+        <br> 
+        <br> 
+        <%- include('partials/footer.ejs')%>
+    </body>
 <!--
         <section class="tituloRegistro"><h2>Completa tus datos</h2></section>
         
@@ -114,5 +87,5 @@
             </form>
         </section>
     -->  
-</body>
+
 </html>
