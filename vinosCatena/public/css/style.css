@@ -210,7 +210,7 @@ text-decoration:underline;
 
 }
 .titulo-productos{
-  height: 100px;
+  height: 10px;
   display: grid;
   align-items: center;
   color: #BA181B;
@@ -500,3 +500,11 @@ justify-content: space-between;
   margin: 0px;
 }
 
+/* NEW PRODUCT */
+
+.carga-de-producto{
+  background-color: red;
+  width:500px;
+  display: flex;
+  flex-wrap: wrap;
+}

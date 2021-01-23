@@ -1,7 +1,7 @@
 
-let productosController = {
+let carritoController = {
     'carrito': function (req , res){
         res.render('carrito')},
 };
 
-module.exports = productosController;
+module.exports = carritoController;
