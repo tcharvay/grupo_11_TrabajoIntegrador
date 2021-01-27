@@ -1,9 +1,22 @@
 <%- include('partials/header.ejs')%>
 
 <body>
+    
 <div class="login">
     <h2>Registro de Usuario</h2>  
-    <br>         
+    <br>  
+    <% if (typeof errors!= 'undefined') { %>
+        <p style="color:black">ERROR</p>
+     <br>  
+    <ul>
+        <%for (let i =0 ; i< errors.length ; i++){%>
+        <li style="color:red">
+            <%=errors[i].msg%>
+        </li>
+        <% } %>    
+    </ul>  
+    <% } %>
+    <br>     
             <section>
                 <form class='formulario' action="" method="POST">
                     <div class='inputForm'>
@@ -23,10 +36,10 @@
                         <input id="password" name="password" type="password" placeholder="Contraseña">
                     
                     </div>
-                    <div class='inputForm'>
+                    <!--<div class='inputForm'>
                         <i class="fas fa-key icon"></i>
                         <input id="passwordC" name="passwordC" type="password" placeholder="Confirmar Contraseña">
-                    </div>
+                    </div>-->
                     <div>
                         <input class="terminos" type="checkbox" required> <small> Acepto terminos y condiciones   </small>
                       </div>
