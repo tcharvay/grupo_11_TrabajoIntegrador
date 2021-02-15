@@ -1,5 +1,6 @@
 <body>
     <%- include('partials/header.ejs')%>
+<<<<<<< HEAD
     <div class="container">
     
         <div class="banner"></div>
@@ -52,6 +53,37 @@
 
 
 </div>
+=======
+
+    <div class="login">
+        <h2>Nuevo Producto</h2>  
+        <br>                    
+            <section>
+                <form class='formulario' action="" method="POST">
+                    <div class='inputForm'>                          
+                        <input id="producto" name="producto" type="text" placeholder="Nombre del producto" required>
+                    </div>
+                    <div class='inputForm'>
+                        <input id="descripcion" name="descripcion" type="text" placeholder="Descripcion" required>
+                    </div>
+                    <div class='inputForm'>
+                        <input id="imagenDelProducto" name="imagenDelProducto" type="img" placeholder="Imagen del producto" required>
+                    </div>
+                    <div class='inputForm'>
+                        <input id="categoria" name="categoria" type="text" placeholder="Categoria" required>
+                    </div>
+                    <div class='inputForm'>
+                        <input id="precio" name="precio" type="number" placeholder="Precio" required>
+                    </div>
+                    <button class='submitLogin' type="submit" value='guardar'>Guardar</button>
+                </form>           
+            </section>
+    </div> 
+    </div>
+    <br>
+    <br>
+    <br> 
+>>>>>>> 17d01300954e9feeca0cff282f8901512591eb4f
     <%- include('partials/footer.ejs')%>   
 </body>
 

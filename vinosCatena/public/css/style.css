@@ -187,9 +187,14 @@ text-decoration:underline;
   
 .costado-izq{
   padding: 0;
+<<<<<<< HEAD
   margin: 2%;
   width: 30%;
   color:#d3d3d3;
+=======
+  width: 30%;
+  color:  B1A7A6;
+>>>>>>> 17d01300954e9feeca0cff282f8901512591eb4f
 
   
 }
@@ -582,6 +587,7 @@ textarea {
   margin: 0px;
 }
 
+<<<<<<< HEAD
 h4{
   color: #d3d3d3;
 }
@@ -630,6 +636,8 @@ h4{
   }
 
 
+=======
+>>>>>>> 17d01300954e9feeca0cff282f8901512591eb4f
 /* NEW PRODUCT */
 
 .carga-de-producto{
@@ -637,6 +645,7 @@ h4{
   width:500px;
   display: flex;
   flex-wrap: wrap;
+<<<<<<< HEAD
 }
 .car-cepa{
   font-size: 20px;
@@ -646,3 +655,6 @@ h4{
   background: rgba(255, 254, 254, 0);
   text-decoration: none;
   }
+=======
+}
+>>>>>>> 17d01300954e9feeca0cff282f8901512591eb4f

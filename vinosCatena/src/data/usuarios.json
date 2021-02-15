@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 [{"apellido":"Gomez","nombre":"pedro","email":"pedrogomez@gmail.com","password":"$2b$12$O1dLBYfq09zA.dJ8V7Pih.FMlNhUBpGv4mfKmmypPBJe3lG0z2i9C"},{"apellido":"Caresano","nombre":"Marcelo ","email":"mcaresano@gmail.com","password":"$2b$12$Y5cToM7.tNn/BPr5ggWxT.oSs8cOsdZe92pca9PFOqlleFiWW2Yma"}]
+=======
+[{"apellido":"pedro","nombre":"123123","email":"pedro","pasword":"123123"},{"apellido":"quintero gonzales ","nombre":"karen lorena","email":"juanmartin17092015@gmail.com","pasword":"$2b$12$MCAu4fhNSJ1Vdjtxf.K/J.U7A1pENbU05VvESJ/cE/vw1P0GuRHtW"},{"apellido":"Gómez","nombre":"Pedro","email":"juanmartin17092015@gmail.com","pasword":"$2b$12$pUJkWg5FxYcoruyfa5kcyu8svtjWcgOd3247R66ex9yGAVWU7bslC"}]
+>>>>>>> 17d01300954e9feeca0cff282f8901512591eb4f
