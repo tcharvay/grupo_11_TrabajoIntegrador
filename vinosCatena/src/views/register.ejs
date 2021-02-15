@@ -1,35 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catena Zapata - Registro</title>
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-    <div class="container">
+<%- include('partials/header.ejs')%>
 
-        <header>
-            <nav class="nav-header">
-            <div class="imagen">
-              <a href="../ " ><img  src="/images/catenaLogoFN.jpeg" class="header-imagen"> </a>
-            </div>
-            <div class="buscador">
-              <input type="text" id="input-buscar" placeholder="Que desea tomar ?" />
-              <a href=""><i class="fas fa-search"></i> Buscar </a>
-            </div>
-            <div class="carrito">
-               <a href="#"><i class="fas fa-shopping-cart"></i> Carrito </a>
-            </div>
-            <div class="usuarios">
-              <a href="./login"><i class="fa fa-user"></i> Usuarios </a>
-           </div>
-          </nav>
-            </header>
+<body>
+    
 <div class="login">
-    <h2>Registro de Usuario</h2>
-            <br>
-           
+    <h2>Registro de Usuario</h2>  
+    <br>  
+    <% if (typeof errors!= 'undefined') { %>
+        <p style="color:black">ERROR</p>
+     <br>  
+    <ul>
+        <%for (let i =0 ; i< errors.length ; i++){%>
+        <li style="color:red">
+            <%=errors[i].msg%>
+        </li>
+        <% } %>    
+    </ul>  
+    <% } %>
+    <br>     
             <section>
                 <form class='formulario' action="" method="POST">
                     <div class='inputForm'>
@@ -39,12 +26,7 @@
                     <div class='inputForm'>
                         <i class="fa fa-user icon"></i>    
                         <input id="nombre" name="nombre" type="text" placeholder="Nombre">
-                    </div>
-                    <div class='inputForm'>
-                        <i class="fa fa-phone icon" ></i>    
-                        <input id="telefono" name="telefono" type="number" placeholder="telefono">
-                    </div>
-                                  
+                    </div>  
                     <div class='inputForm'>
                         <i class="fas fa-envelope icon"></i>    
                         <input id="email" name="email" type="email" placeholder="Ingrese su Email">
@@ -54,65 +36,24 @@
                         <input id="password" name="password" type="password" placeholder="Contraseña">
                     
                     </div>
-                    <div class='inputForm'>
-                        <i class="fas fa-key icon"></i>
-                        <input id="passwordC" name="passwordC" type="password" placeholder="Confirmar Contraseña">
-                    </div>
+                   
                     <div>
-                        <input class="terminos" type="checkbox" required>Acepto terminos y condiciones>  
+                        <input class="terminos" type="checkbox" required> <small> Acepto terminos y condiciones   </small>
                       </div>
                     <div class="buttons">
-                        <button class='submitLogin' type="reset" value='limpiar'>Borrar</button>
-                        <button class='submitLogin' type="submit" value='cargaDatos'>Registrar</button>
+                        <button class='submit' type="reset" value='limpiar'>Borrar</button>
+                        <button class='submit' type="submit" value='cargaDatos'>Registrar</button>
                     </div> 
                 </form>
-               
+            
             </input>
             </section>
         </div>
         </div>
-<!--
-        <section class="tituloRegistro"><h2>Completa tus datos</h2></section>
-        
-        <section class="tablasRegistro">
-            <table>
-            <form action=“register.html” method=“POST”>
-                <tr> 
-                <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
-                </tr>
-                <tr> 
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
-                </tr>
-            </table>
-            <table>
-                <tr>
-                <input type="number" id="dni" name="dni" placeholder="DNI"required>
-                </tr>
-                <tr> 
-                <input type="number" id="tel" name="tel" placeholder="Teléfono"required>
-                </tr>
-            </table>
-            <table>
-                <tr>
-                <input type=“email” id=“email” name=“email”  placeholder="Email"required>
-                </tr>
-                <tr>
-                <input type=“email” id=“email” name=“email” placeholder="Confirmación Email"  required>
-                </tr>
-            </table>          
-            <table>
-                <tr>
-                <input type="password" id="Contrasena" name='Contrasena' placeholder="Clave" required>
-                <input type="password" id="Contrasena" name='Contrasena' placeholder="Confirmación Clave"required>
-                </tr>
-            </table>
-            <input type="checkbox" required><small>Acepto terminos y condiciones</small>   
-            </input>
-            <p>          
-            <button class="submit"type=“submit”>Enviar</button>
-            </p>
-            </form>
-        </section>
-    -->  
-</body>
+        <br> 
+        <br> 
+        <br> 
+        <%- include('partials/footer.ejs')%>
+    </body>
+
 </html>

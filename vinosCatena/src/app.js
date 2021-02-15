@@ -22,8 +22,6 @@ app.use('/products',productsRouter);
 app.use('/carrito',carritoRouter);
 
 
-
-
 app.listen (5000, function(req, res){
     console.log("conectado en puerto 5000");
 })

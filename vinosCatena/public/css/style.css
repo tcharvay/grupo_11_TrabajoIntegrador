@@ -29,7 +29,7 @@ body {
 }   
 
 .container {
-  width: 95%;
+  width: 98%;
   max-width: 100%;
   height: auto;
   margin: 0 auto;
@@ -112,6 +112,8 @@ i {
   color: #b1a7a6;
   align-content: center;
   padding: 2px;
+  min-width: 50px;
+  text-align: center;
 }
 
 
@@ -120,7 +122,7 @@ i {
 .banner{
    width: auto;
    max-width: 100%;
-   height: 300px;
+   height: 200px;
    background-size: 100% 100%;
    animation: banner 10s infinite;
    object-fit: contain;
@@ -185,36 +187,45 @@ text-decoration:underline;
   
 .costado-izq{
   padding: 0;
-  width: 30%;  
+  margin: 2%;
+  width: 30%;
+  color:#d3d3d3;
+
   
 }
 .lista{
    text-decoration: none;
+   color: #B1A7A6;
+
  }
 
 .a-costado{
   list-style: none;
-  padding: 10%;
+  padding: 5px;
   font-size: 24px;
 }
+
 .costado-der{
   width: 100%;
   height: 100%;
+  margin: 2%;
   align-content: center;
   align-items: center;
   text-align: center;
 
 }
 .titulo-productos{
-  height: 100px;
+  height: 10px;
   display: grid;
   align-items: center;
-  color: #BA181B;
+  color:#d3d3d3;
   text-align: center;
 }
 
 
 /**  listaProductos   **/
+
+
 
 .list-prod{
   width: 100%;
@@ -225,6 +236,12 @@ text-decoration:underline;
   text-align: center;
 }
 
+.icons-abm{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+
 article {
   display:flexbox;
   flex-wrap: wrap;
@@ -232,12 +249,31 @@ article {
   padding: 10px;
   background:#b1a7a6;
   border: #BA181B 1px solid;
-  align-content:centerspace-around;
-
+ 
 }   
+.bloqueArticulos{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;  
+  justify-content: flex-start;
+
+}
+.articulo{
+  display: flexbox;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 20%;
+  padding: 2%;
+  border: 1px solid #660708;
+  background:whitesmoke;
+  border-radius: 10px;
+  justify-content: space-between;
+  
+}
 
 #list-img{
-  max-width: 90%;
+  max-width: 60%;
 }
 
 
@@ -255,9 +291,33 @@ article {
   display: block;
 }
 
+/** Carga de Producto **/
+
+.carga-producto {
+  display: flex;
+  align-self:center;
+  justify-content: center;
+  width: 30%;
+  max-width: 100%;
+  margin: 2%;
+  padding: 2%;
+  border: #660708 1px solid;
+  border-radius: 10px;
+  background-color:#B1A7A6;
+}
 
 
+/**  Lista de productos    **/
 
+.titulo-lista{
+  display: flex;
+  flex-wrap: wrap;
+  align-self:flex-end;
+  font-size: 24px;
+  align-content: space-between;
+  
+  
+}
 
 
 /**  detalle Producto   **/
@@ -357,7 +417,6 @@ input[type='password']{
   width: 80%;
   border: none;
   border-radius: 5px;
-  background: white;
   text-decoration: none;
   
 }
@@ -366,8 +425,9 @@ input[type='password']{
   margin-bottom: 15px;
   padding: 5px;
   font-size: 20px;
-  background: white;
+  background:white;
   width: 100%;
+  border-radius: 5px;
 }
 
 .icon{
@@ -375,30 +435,26 @@ input[type='password']{
   text-align: center;
 }
 
-
   
   .login {
    display: flex;
    flex-wrap: wrap;
    flex-direction: column;
    justify-content: space-around;
-   
    align-items: center;
    align-self: stretch;
    width:30%;
    height: 100%;
    margin: inherit;
    margin-top: 10%;
+   background-image: url('/public/images/catenaLogoFN.jpeg');
+   background-size:auto;
    background-color:#d3d3d3;
    padding:10px 5px;
-      border-radius: 5px;
+   border-radius: 5px;
    box-sizing:content-box;
  
-   
-  
-    
-
-  }
+   }
 
   .login h2{
     text-align: center;
@@ -421,14 +477,13 @@ input[type='password']{
    
 }
 
-  .submitLogin{
-    color:white;
-    background-color: #BA181B;
+  .submit{
+    color:rgba(255, 254, 254, 0.9);
+    background-color: seagreen;
     border-radius: 4px;
     border: none;
     padding: 0 20px;
     text-decoration: none;
-    font-size: 10;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
     width: 100px;
     height: 30px;
@@ -436,7 +491,7 @@ input[type='password']{
 
   }
 
-  .submitLogin:hover{
+  .submit:hover{
     background-color:teal;
   }
 
@@ -463,11 +518,42 @@ input[type=checkbox]:hover{
 }
 
 .buttons{
+font-size: 20px;
 width: 100%;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
 
+}
+.buttons [type="reset"]{
+  background-color:#660708;
+}
+
+.buttons [type="submit"]{
+  background-color: seagreen;
+}
+
+
+/*  LOGIN Y REGISTER */
+
+input[type="file"],
+input[type="textArea"]{
+  font-size: 14px;
+  width: 80%;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  
+}
+
+textarea {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  width: 80%;
+  border: 1px solid #b1a7a6;
+  border-radius: 5px;
+
+  text-decoration: none;
 }
 
 /* CARRITO */
@@ -496,3 +582,67 @@ justify-content: space-between;
   margin: 0px;
 }
 
+h4{
+  color: #d3d3d3;
+}
+/* PRODUCTOS */
+
+.listaProductos {
+  display: flex;
+  flex-wrap:wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  color: whitesmoke; 
+  align-items:flex-start;
+  align-self:flex-start;
+  width: 50%;
+  height: 100%;
+  margin: 10%;
+  margin-top: 10%;
+  padding:2px 5px;
+  box-sizing:content-box;
+
+}
+
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px solid #660708;
+  align-items: center;
+  align-self: stretch;
+  width: 50%;
+  height: 100%;
+  margin: 5%;
+  margin-top: 5%;
+  background-color: #d3d3d3;
+  /*background-image: url(../images/fondoCopa.jpg);
+  background-repeat: no-repeat;
+  background-size:contain;*/
+  padding:2%;
+  border-radius: 10px;
+  box-sizing:content-box;
+
+  }
+  .productos h2{
+    color: #d3d3d3;
+  }
+
+
+/* NEW PRODUCT */
+
+.carga-de-producto{
+  background-color: red;
+  width:500px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.car-cepa{
+  font-size: 20px;
+  width: 70%;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 254, 254, 0);
+  text-decoration: none;
+  }

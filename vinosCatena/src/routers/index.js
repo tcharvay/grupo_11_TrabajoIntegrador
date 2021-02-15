@@ -7,7 +7,6 @@ router.get('/', generalController.home);
 router.get('/empresa',generalController.empresa)
 router.get('/ubicacion',generalController.ubicacion)
 router.get('/contacto',generalController.contacto)
-router.get('/productos',generalController.productos)
 
 
 module.exports = router;
