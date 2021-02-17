@@ -1,63 +1,53 @@
-   <%- include('partials/header.ejs')%>
+<%- include('partials/header.ejs')%>
 
-   <br>
-   <br>
-
-    <section>
-      <article class="art-det">
-      <div class="det-prod">
-     
-        <div class="img-prod">
-          <img id="img-prod-det" src="../images/catenamalbec.jpg" alt="">
-        </div>
-        
-        <div class="buy-prod">
-            <span class= "title">Vino Catena Zapata - Malbec 2018</span> 
-            <br><br>
-            <span>Precio x unidad:</span>
-            <span class="price">$1500,00</span>
-            <br>
-            <span class="cuotas">3 cuotas sin interes de $500</span>
-            <br/>
+<div class="container">
+  <div class="banner"> </div>
+  
+   <section class="article-back">
+      <article class="article-card-h">
+         <div class="card-img-det">
+            <img id="img-det" src="../images/upload/<%= products.img %>" alt="">
+         </div>
+         
+         <div class="card-text">
+            <h2 class="title-prod"><%= products.nombre  %></h2>
+            <h4 class="subtitle-prod"><%= products.cepa  %></h4> 
+            <h4 class="subtitle-prod"><%= products.descripcion  %></h4>
+             
+            <span>Precio x unidad </span>
+            <span class="price"> $ <%= products.precio  %></span>
+            <br><br><br>
+            
+            <small>Tarjeta de Debito/Credito hasta en 3 cuotas sin interes</small>
+            <br> <br>
             <span>Cantidad</span>
-            <select id="car-cantidad" name="car_cant" class="car-cant">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-              </select>            
-            <br>
+            <select id="unit-cant" name="unit_cant" class="unit-cant">
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+               <option value="5">5</option>
+               <option value="6">6</option>
+               <option value="7">7</option>
+               <option value="8">8</option>
+               <option value="9">9</option>
+               <option value="10">10</option>
+               <option value="11">11</option>
+               <option value="12">12</option>
+           
+            </select>            
+            
+            <div class="buttons-buy">
+               <a href="/" class="back-button" value="Volver">Volver </a>
+               <input type="button" class="buy-button" value="Agregar al carrito">
+            </div>  
+         </div>
+      </article>  
+   </section>
+</div>
 
-            <br><br> <br>
-            <input type="button" class="car-button" value="Agregar al carrito">
-            <input type="button" class="buy-button" value="Comprar">
-            <br>
-            <br>
-            <small>Puede abonar con su tarjeta de Debito/Credito sin Intreres</small>
-       </div>
-      </div>
-      <div class="desc-prod">
-        <h2 class="titulo-Vino">Catena Malbec -2018</h2>
-        <h5>INFORMACIÓN TÉCNICA</h5>
-        <p> Varietal: 100% Malbec <br> Alcohol: 13.6% <br> Acidez Total: 5.25 gramos/litro <br> pH: 3.7</p>
-        <h5>DESCRIPCIÓN DEL VINO</h5>
-        <p>Los vinos Catena son el resultado de cortes especiales de diferentes viñedos de la familia Catena, elaborados por Laura Catena, cuarta generación de viticultores, y Alejandro Vigil, Enólogo Jefe de Catena Zapata. Si bien los vinos Catena pueden consumirse en el momento de su lanzamiento, han demostrado tener un maravilloso potencial de guarda, de entre diez y veinte años. Luego de varias décadas de estudio e investigación de los diferentes microclimas de altura de Mendoza, la familia Catena ha identificado las mejores zonas para la plantación de los viñedos de la familia. Este vino, corte de dichos viñedos históricos, es un Malbec de carácter único, de excelente tipicidad, balance y concentración.</p>
-         <h5>VINIFICACIÓN</h5> 
-         <p>5 días de maceración en frío pre-fermentativa a 8,8ºC para mayor extracción de aromas. 12 días de fermentación. 19-22 días de maceración post-fermentativa. Levaduras indígenas. Añejamiento: 12 meses en roble. Selección de roble en función del viñedo y las características de la cosecha. Barricas de primer, segundo y tercer uso.</p>
-      </div>
-    </article>
-    </section>
 
-    <br> 
-    <%- include('partials/footer.ejs')%>
-    
-   </body>
+
+
+<%- include('partials/footer.ejs')%>
 </html>

@@ -1,0 +1,9 @@
+/**************************/
+/*  Elementos del Footer  */
+
+footer{
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    background-color: black;
+  }

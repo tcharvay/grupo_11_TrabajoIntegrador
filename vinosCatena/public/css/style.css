@@ -5,11 +5,16 @@
 /* Font Awesome */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
 
+@import 'header.css';
 
+@import 'footer.css';
+
+/***********/
 /* General */
 
+
 * { 
- /*box-sizing: content-box;*/
+  box-sizing: content-box;
   padding: 0;
   margin: 0;
 }
@@ -25,8 +30,7 @@ body {
    margin: 0;
    padding: 0;
    position: relative;
-    
-}   
+ }   
 
 .container {
   width: 98%;
@@ -39,84 +43,14 @@ body {
   align-self: stretch;
   flex-wrap: wrap;
  
-  
   }
 
 
-
-footer{
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 100%;
-  background-color: black;
-}
-
-  /* Elementos del Header   */
-
-header{
-  width: 100%;
-max-width: 100%;
-  display: flex;
-  justify-content:space-between;
-  margin:initial; 
-  background-color: black;
-  
-}
-
-.nav-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-right: 30px;
-  box-sizing: border-box;
-  
-}
-
-.header-imagen {
-  width: 200px;
-  max-width: 100%;
-  object-fit: contain;
-  height: auto;
-}
-
-.buscador{
-  display: flex;
-  padding: 10px;
-  box-sizing: border-box;
-  
-}
-
-#input-buscar{
-  padding:  5px 10px;
-  box-sizing: border-box;
-  font-size: 20px;
-  width:  550px;
-  color: #660708;
-  text-align: left;
-  border-radius: 10px;
-}
-
-header a{
-  font-size: 20px;
-  color:#d3d3d3;
-  display: flex;
-  padding: inherit;
-  text-align: center;
-  align-content: center;
-  text-decoration: none;
-}
-
-i {
-  font-size: 24px;
-  color: #b1a7a6;
-  align-content: center;
-  padding: 2px;
-  min-width: 50px;
-  text-align: center;
-}
+/********************************/
+/*  Elementos del del Container */
 
 
+/*******************/
 /* Banner superior */
 
 .banner{
@@ -151,6 +85,64 @@ i {
 
 }
 
+
+
+
+
+/***********************************/
+
+
+/*  
+  
+Index
+  Empresa
+  Contacto
+  Ubicacion
+
+  detalleProducto
+
+Carrito
+  principalCliente
+
+
+Usuarios  (Admin y Cliente)
+  login
+  register (2)
+  info usuario
+  
+Productos
+  listaProductos
+  cargarNuevo
+  Editar
+  detalleProducto
+
+Carrito
+  principalAdmin
+
+
++ Detalles
+
+
+Index: - section 
+         - cards : imagen, titulo, precio,  botones (Detalle, Comprar)
+  Detalle producto: 
+
+
+Productos - section - cards
+Productos ABM: 
+                Lista productos : - section
+                                  - cards : - cards : imagen, titulo, precio,  botones (ver, editar, borrar)
+                cargarNuevo : box-abm , input, botones (limpiar, cargar)
+                editar: box-abm, input, botones (cancelar, confirmar)
+
+  
+                registro  - box-abm
+
+
+*/
+
+
+
 .nav-menu{
   width: 100%;
   display: flex;
@@ -178,23 +170,19 @@ text-decoration:underline;
   
 }
 
-
 .cuerpo{
-  width: 100%;
-  height: 70%;
   display: flex;
+  width: 98%;
+  max-width: 100%;
+  height: auto;
+  
 }
   
 .costado-izq{
   padding: 0;
-<<<<<<< HEAD
   margin: 2%;
   width: 30%;
   color:#d3d3d3;
-=======
-  width: 30%;
-  color:  B1A7A6;
->>>>>>> 17d01300954e9feeca0cff282f8901512591eb4f
 
   
 }
@@ -204,24 +192,58 @@ text-decoration:underline;
 
  }
 
-.a-costado{
+.list-menu{
   list-style: none;
   padding: 5px;
   font-size: 24px;
 }
 
-.costado-der{
+/*  Container General de productos  (Lista de productos de ABM) */
+
+.carousel-container{
   width: 100%;
   height: 100%;
   margin: 2%;
   align-content: center;
   align-items: center;
   text-align: center;
+}
+
+.container-links{
+  display: flexbox;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  padding: 1%;
+}
+
+.title-cards{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  color:red;
+}
+
+.items-abm{
+  display: flex;
+  justify-content:flex-end;
+}
+
+.container-cards{
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;  
+  justify-content: flex-start;
 
 }
 .titulo-productos{
-  height: 10px;
+  height: auto;
   display: grid;
+  margin: 1%;
   align-items: center;
   color:#d3d3d3;
   text-align: center;
@@ -230,33 +252,17 @@ text-decoration:underline;
 
 /**  listaProductos   **/
 
-
-
 .list-prod{
-  width: 100%;
+  
   display: flex;
   flex-wrap:wrap;
-  align-content: center;
-  align-items: center;
-  text-align: center;
+  width: 100%;
+
 }
 
-.icons-abm{
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-between;
-}
 
-article {
-  display:flexbox;
-  flex-wrap: wrap;
-  width: 30%;
-  padding: 10px;
-  background:#b1a7a6;
-  border: #BA181B 1px solid;
- 
-}   
-.bloqueArticulos{
+
+.container-articulos{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -265,25 +271,55 @@ article {
 
 }
 .articulo{
-  display: flexbox;
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 20%;
-  padding: 2%;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  padding: 1%;
   border: 1px solid #660708;
   background:whitesmoke;
   border-radius: 10px;
-  justify-content: space-between;
+  width: 25%;
   
 }
 
+.articulo-abm{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  padding: 1%;
+  border: 1px solid #660708;
+  background:whitesmoke;
+  border-radius: 10px;
+  width: 10%;
+}
+
 #list-img{
-  max-width: 60%;
+  width: auto;
+  max-width: 50%;
+ 
 }
 
 
+/*  IMG Productos         */
+.img-prod{
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  align-content: center;
+}
+
+
+
+
+
 .list-buy-prod{
-  display:inline-block;
+  display:flexbox;
   max-width: 90%;
   padding: 10px;
 }
@@ -295,6 +331,13 @@ article {
 .list-buy-prod a{
   display: block;
 }
+
+
+.icons-abm{
+  display: flex;
+  justify-content: center;
+}
+
 
 /** Carga de Producto **/
 
@@ -333,7 +376,6 @@ article {
   padding: 0px;
   background: #d3d3d3;
   display: flex;
-
 }
 
 .det-prod{
@@ -342,11 +384,7 @@ width: 100%;
 
 }
 
-.img-prod{
-  box-sizing: border-box;
-  width: 70%;
-  max-width: 100%;
-}
+
 
 #img-prod-det{
   width: 100%;
@@ -364,30 +402,72 @@ width: 100%;
   font-weight: bold;
   font-style: italic;
 }
-.price{
-  font-style: italic;
-  font-weight: bold;
-  font-size: 24px;
-  
-}
+
+
 .cuotas{
   font-size: 14px;
   
   }
 
   
-.car-button{
-  padding: 8px;
+
+
+
+
+
+/**************************************************************/
+/*   Detalle de productos  (vista Clientes)
+
+/**************************************************************/
+
+.article-back{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 60%;
+  margin: 1%;
   border-radius: 10px;
-  font-size: 12px;
+  background-color: #d3d3d3;
+  align-self:center;
+  justify-content:space-evenly;
+  
 }
 
-.buy-button{
-  padding: 8px;
-  border-radius: 10px;
-  font-size: 12px;
-  background-color: #BA181B;
-  color: white;
+.article-card-h{
+  display: flex;
+  width: 95%;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items:center;
+  align-self: center;
+}
+
+.card-img-det {
+  display: flex;
+  width: 35%;
+  margin: 1px;
+  background-color:#d3d3d3;
+  border-radius: 6px;
+  justify-content: center;
+
+}
+
+#img-det {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  align-self: center;
+  padding: 5%;
+  justify-content: center;
+}
+
+.card-text {
+  display: flexbox;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  flex-direction: column;
+  align-self:center;
+  font-size: 20px;
 }
 
 .desc-prod{
@@ -395,21 +475,63 @@ width: 100%;
   padding: 10px;
   width: 100%;
 }
- .titulo-Vino{
-   color:#660708 ;
-   padding-bottom: 10px;
-  
+ .title-prod{
+   color:#BA181B;
+   font-weight: bold; 
+   font-size:30px;
+   margin-bottom: 10px;
+   }
+
+ .subtitle-prod{
+  color: #660708;
+  font-size: 22px;
+  margin-bottom: 8px;
+ } 
+ 
+ .price {
+   color: black;
+   font-size: 32px;
+   font-weight: bolder;
   }
+ .payment {
+  color: red;
+  font-size: 20px;
+ }
 
-.desc-prod h5{
- font-weight: bold;
- font-size: inherit;
+ #unit-cant{
+   font-size: 20px;
+   color: black;
+ }
+
+ .buttons-buy {
+  height: 20%; 
+  width: 100%;
+   margin-top: 15px;
+   display: flex;
+   flex-wrap: nowrap;
+   flex-direction: row;
+   justify-content:flex-end;
+   align-items: center;
+   align-self: flex-end;
+   
+ }
+ .back-button{
+  padding: 5%;
+  margin-right: 20%;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: #B1A7A6;
+  color: white;
 }
 
-.desc-prod p{
-  font-size: 14px;
-  padding: 5px;
+.buy-button{
+  padding: 5%;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: #BA181B;
+  color: white;
 }
+
 
 
 /*  LOGIN Y REGISTER */
@@ -427,11 +549,12 @@ input[type='password']{
 }
 
 .inputForm{
+  
   margin-bottom: 15px;
-  padding: 5px;
+  padding: 2px;
   font-size: 20px;
   background:white;
-  width: 100%;
+  width: 99%;
   border-radius: 5px;
 }
 
@@ -587,7 +710,6 @@ textarea {
   margin: 0px;
 }
 
-<<<<<<< HEAD
 h4{
   color: #d3d3d3;
 }
@@ -636,8 +758,6 @@ h4{
   }
 
 
-=======
->>>>>>> 17d01300954e9feeca0cff282f8901512591eb4f
 /* NEW PRODUCT */
 
 .carga-de-producto{
@@ -645,7 +765,6 @@ h4{
   width:500px;
   display: flex;
   flex-wrap: wrap;
-<<<<<<< HEAD
 }
 .car-cepa{
   font-size: 20px;
@@ -655,6 +774,3 @@ h4{
   background: rgba(255, 254, 254, 0);
   text-decoration: none;
   }
-=======
-}
->>>>>>> 17d01300954e9feeca0cff282f8901512591eb4f

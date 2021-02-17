@@ -5,18 +5,19 @@ const path = require('path');
 let{ckeck,validationResult,body, check}= require('express-validator');
 
 module.exports ={
-    newProduct: (req, res)=>{
-        res.render ('newProduct');
+    new: (req, res)=>{
+        res.redirect ('productNew');
     },
-    create : function(req,res){
+
+    create : (req,res)=>{
         let errors = validationResult(req);
-        let productos = fs.readFileSync(path.join(__dirname,'../data/productos.json'), 'utf8');
-        productos =JSON.parse (productos);
+        let products = fs.readFileSync(path.join(__dirname,'../data/productos.json'), 'utf8');
+        products =JSON.parse (products);
         
         let newId = 0;
-        if (productos.length != 0){
-        let ultimoRegistro = productos.length-1;
-        newId = productos[ultimoRegistro].id
+        if (products.length != 0){
+        let ultimoRegistro = products.length-1;
+        newId = products[ultimoRegistro].id
         }
         
      if (errors.isEmpty()){
@@ -31,28 +32,54 @@ module.exports ={
         fs.writeFileSync(path.join(__dirname,'../data/productos.json'),JSON.stringify(productos));
         res.redirect ('/products');
      }else {
-         return res.render('newProduct',{errors:errors.errors})
+         return res.render('productNew',{errors:errors.errors})
      }
     
 },
 
-    editProduct: function (req , res){
-        res.render('editar Producto')
+    detail: (req, res)=> {
+        let products = fs.readFileSync(path.join(__dirname,'../data/productos.json'), 'utf8');
+        products =JSON.parse (products);
+            for (i=0; i<products.length ;i++){
+                if (products[i].id == req.params.id) {
+                   return res.render('productDetail', {products : products[i]});
+                }
+            }
     },
-    
-    deleteProduct: (req, res)=>{
+
+    edit:(req, res)=>{
+        let products = fs.readFileSync(path.join(__dirname,'../data/productos.json'), 'utf8');
+        products =JSON.parse (products);
+            for (i=0; i<products.length ;i++){
+                if (products[i].id == req.params.id) {
+                   return res.render('productDetail', {products : products[i]});
+                }
+            }
+    },
+
+    update:(req, res)=>{
+        res.send('editar producto');
+    },
+     
+    delete: (req, res)=>{
         res.send("eliminar producto");
     },
     
-    detProducto: function(req, res) {
-            res.render('detProducto');
-    },
-    
+
+    detProducto: (req, res)=> {
+        let products = fs.readFileSync(path.join(__dirname,'../data/productos.json'), 'utf8');
+        products =JSON.parse (products);
+            for (i=0; i<products.length ;i++){
+                if (products[i].id == req.params.id) {
+                   return  res.render('detproducto', {products : products[i]});
+                }
+            }
+     },
    
-    listaProductos: function(req,res){
-        let productos = fs.readFileSync(path.join(__dirname,'../data/productos.json'), 'utf8');
-        productos =JSON.parse (productos);
-        res.render ('listaProductos',{productos: productos});
+    listaProductos: (req,res)=>{
+        let products = fs.readFileSync(path.join(__dirname,'../data/productos.json'), 'utf8');
+        products =JSON.parse (products);
+        res.render ('products',{products: products});
     },
     
 }
