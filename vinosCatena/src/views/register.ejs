@@ -18,7 +18,7 @@
     <% } %>
     <br>     
             <section>
-                <form class='formulario' action="" method="POST">
+                <form class='formulario' action="/users/register" method="POST">
                     <div class='inputForm'>
                         <i class="fa fa-user icon"></i>    
                         <input id="apellido" name="apellido" type="text" placeholder="Apellido">
@@ -33,7 +33,7 @@
                     </div>
                     <div class='inputForm'>
                         <i class="fas fa-key icon"></i>
-                        <input id="password" name="password" type="password" placeholder="Contraseña">
+                        <input id="password" name="pasword" type="password" placeholder="Contraseña">
                     
                     </div>
                     <!--<div class='inputForm'>
@@ -58,51 +58,5 @@
         <br> 
         <%- include('partials/footer.ejs')%>
     </body>
-<<<<<<< HEAD
-=======
-<!--
-        <section class="tituloRegistro"><h2>Completa tus datos</h2></section>
-        
-        <section class="tablasRegistro">
-            <table>
-            <form action=“register.html” method=“POST”>
-                <tr> 
-                <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
-                </tr>
-                <tr> 
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
-                </tr>
-            </table>
-            <table>
-                <tr>
-                <input type="number" id="dni" name="dni" placeholder="DNI"required>
-                </tr>
-                <tr> 
-                <input type="number" id="tel" name="tel" placeholder="Teléfono"required>
-                </tr>
-            </table>
-            <table>
-                <tr>
-                <input type=“email” id=“email” name=“email”  placeholder="Email"required>
-                </tr>
-                <tr>
-                <input type=“email” id=“email” name=“email” placeholder="Confirmación Email"  required>
-                </tr>
-            </table>          
-            <table>
-                <tr>
-                <input type="password" id="Contrasena" name='Contrasena' placeholder="Clave" required>
-                <input type="password" id="Contrasena" name='Contrasena' placeholder="Confirmación Clave"required>
-                </tr>
-            </table>
-            <input type="checkbox" required><small>Acepto terminos y condiciones</small>   
-            </input>
-            <p>          
-            <button class="submit"type=“submit”>Enviar</button>
-            </p>
-            </form>
-        </section>
-    -->  
->>>>>>> 17d01300954e9feeca0cff282f8901512591eb4f
 
 </html>

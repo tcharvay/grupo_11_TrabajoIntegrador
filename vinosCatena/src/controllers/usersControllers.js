@@ -1,14 +1,22 @@
 const fs = require('fs');
 const path = require('path');
-const bcrypt=require ('bcrypt');
+const bcrypt= require ('bcrypt');
 var usuarios = fs.readFileSync(path.join(__dirname,'../data/usuarios.json'), 'utf8');
 var usuarios=JSON.parse(usuarios);
 let{ckeck,validationResult,body, check}= require('express-validator');
-
-
 module.exports ={
     login: function(req, res) {
         res.render('login') 
+    },
+    logueado: function(req, res) {            
+         for (let i = 0; i < usuarios.length; i++) {
+             //console.log(usuarios[i].email)
+            if(usuarios[i].email == req.body.email) {
+                if(bcrypt.compareSync(req.body.pasword, usuarios[i].pasword) == true){
+                    return  res.send ('hola')
+                 }                             
+          }    
+        }return  res.render('login') 
     },
     register: function(req, res) {
         res.render('register') 
@@ -21,25 +29,15 @@ module.exports ={
          apellido :req.body.apellido,
          nombre : req.body.nombre,    
          email : req.body.email,
-         password : bcrypt.hashSync(req.body.password,12)
+         pasword : bcrypt.hashSync(req.body.pasword,12)
         })
         fs.writeFileSync(path.join(__dirname,'../data/usuarios.json'),JSON.stringify(usuarios));
          res.render('login')
      }else {
          return res.render('register',{errors:errors.errors})
      }
-    },
     
-    checkUser :function (req, res){
-        let datosLogin = req.body;
-        for (let i =0; i<usuarios.length ;i++){
-            if (usuarios[i].email == req.body.email){
-                if (bcrypt.compareSync(req.body.password, usuarios[i].password)){
-                    // ingreso el usuario
-                }
-            }
-        }
-    }
+},
 }
 
 
