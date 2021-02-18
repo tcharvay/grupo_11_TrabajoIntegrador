@@ -12,7 +12,6 @@
 /***********/
 /* General */
 
-
 * { 
   box-sizing: content-box;
   padding: 0;
@@ -21,7 +20,10 @@
 
 body {
    font-family: Roboto, Arial, Helvetica, sans-serif;
-   background-color: black;
+   background-image: url("../images/backgroundBl.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   /*background-color: black;*/
    display: flex;
    flex-wrap:wrap;
    justify-content: center;
@@ -30,7 +32,8 @@ body {
    margin: 0;
    padding: 0;
    position: relative;
- }   
+   box-sizing: content-box;
+  }   
 
 .container {
   width: 98%;
@@ -163,39 +166,58 @@ Productos ABM:
  font-size: 22px;
 }
 
-.cepas {
-text-decoration:underline;
-  color: #d3d3d3;
-  font-style: italic;
-  
-}
+
 
 .cuerpo{
   display: flex;
-  width: 98%;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
   max-width: 100%;
   height: auto;
   
 }
   
 .costado-izq{
-  padding: 0;
-  margin: 2%;
-  width: 30%;
-  color:#d3d3d3;
 
   
 }
 .lista{
    text-decoration: none;
    color: #B1A7A6;
+ }
 
+.lista2{
+   text-decoration: none;
+   color: lightblue;
  }
 
 .list-menu{
+  display: flex;
+  padding: 0;
+  height: 40px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  color:#d3d3d3;
+  background-color: black;
+  max-width: 100%;
+  justify-content: center;
+ 
+  
+}
+.list-menu ul{
+  display: flex;
+  text-decoration: none;
+  align-self: center;
+  
+
+}
+ .list-menu ul li {
   list-style: none;
-  padding: 5px;
-  font-size: 24px;
+  margin: 0 30px 0 30px;
+
+  
 }
 
 /*  Container General de productos  (Lista de productos de ABM) */
@@ -203,17 +225,17 @@ text-decoration:underline;
 .carousel-container{
   width: 100%;
   height: 100%;
-  margin: 2%;
-  align-content: center;
+  margin: 1%;
   align-items: center;
   text-align: center;
+
 }
 
 .container-links{
   display: flexbox;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 1%;
 }
 
@@ -238,54 +260,42 @@ text-decoration:underline;
   flex-wrap: wrap;
   align-content: center;  
   justify-content: flex-start;
+  align-self: stretch;
+  box-sizing: border-box;
 
-}
-.titulo-productos{
-  height: auto;
-  display: grid;
-  margin: 1%;
-  align-items: center;
-  color:#d3d3d3;
-  text-align: center;
 }
 
 
 /**  listaProductos   **/
 
-.list-prod{
-  
+.article{
   display: flex;
-  flex-wrap:wrap;
-  width: 100%;
-
-}
-
-
-
-.container-articulos{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;  
-  justify-content: flex-start;
-
-}
-.articulo{
-  display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
-  align-items: center;
+  align-self: stretch;
+  align-items: stretch;
   justify-content: center;
   padding: 1%;
   border: 1px solid #660708;
   background:whitesmoke;
   border-radius: 10px;
-  width: 25%;
+  width: 17%;
+  display:table;
+  
   
 }
 
-.articulo-abm{
+.cepa {
+    font-size: 30px;
+    background-color:#d3d3d3;
+    color: #BA181B;
+    font-style: italic;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+.article-abm{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -307,7 +317,7 @@ text-decoration:underline;
 
 
 /*  IMG Productos         */
-.img-prod{
+.div-img{
   box-sizing: border-box;
   width: 100%;
   max-width: 100%;
@@ -319,7 +329,8 @@ text-decoration:underline;
 
 
 .list-buy-prod{
-  display:flexbox;
+  display:flex;
+  flex-direction: column;
   max-width: 90%;
   padding: 10px;
 }

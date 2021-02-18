@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const metohodOverride = require ('method-override'); // para usar put y delete con _mehod como parametro en el Form
+const methodOverride = require ('method-override'); // para usar put y delete con _mehod como parametro en el Form
 
 
 const indexRouter = require('./routers/index');
@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '../public')));
-app.use(metohodOverride('_method'));
+app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

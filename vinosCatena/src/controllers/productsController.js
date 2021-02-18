@@ -5,8 +5,9 @@ const path = require('path');
 let{ckeck,validationResult,body, check}= require('express-validator');
 
 module.exports ={
+    
     new: (req, res)=>{
-        res.redirect ('productNew');
+         res.render ('productNew');
     },
 
     create : (req,res)=>{

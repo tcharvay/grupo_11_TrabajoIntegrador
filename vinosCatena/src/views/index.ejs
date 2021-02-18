@@ -1,65 +1,46 @@
    
-   <%- include('partials/header.ejs')%>
+<%- include('partials/header.ejs')%>
        
-   <div class="container">  
-    <div class="banner"> </div>
-      
+<div class="container">  
+   <div class="banner"> </div>
       <section class="cuerpo">
-        <section class="costado-izq"> 
-          
-          <div class="list-menu"> 
-           <ul >
-            <h4 class="cepas">Linea por Cepas</h4>
-            <br>
-            <li><a href="/cabernetFrank"class="lista">Cabernet Frank</a></li>
-            <li><a href=""class="lista">Cabernet Suavignon</a></li>
-            <li><a href=""class="lista">Chardonnay</a></li>
-            <li><a href=""class="lista">Malbec</a></li>
-            <li><a href=""class="lista">Merlot</a></li>
-            <li><a href=""class="lista">Sauvignon Blanc</a></li>
-            <br>
-            <li><a href="/products"class="lista">ABM de Productos</a></li>
-         </div>  
-        
-        </section>
+         <section class="list-menu"> 
+               <ul >
+                  <li><a href="/cabernetFrank"class="lista">Cabernet Frank</a></li>
+                  <li><a href=""class="lista">Cabernet Suavignon</a></li>
+                  <li><a href=""class="lista">Chardonnay</a></li>
+                  <li><a href=""class="lista">Malbec</a></li>
+                  <li><a href=""class="lista">Merlot</a></li>
+                  <li><a href=""class="lista">Sauvignon Blanc</a></li>
+                  <li><a href="/products"class="lista2">ABM de Productos</a></li>
+               </ul>   
+         </section>
       
-        <section class="carousel-container">
+         <section class="carousel-container">
+            <section class="container-cards">
+               <% for(i=0;i<productos.length ;i++){ %>
+               <article class="article">
+                  <div class="cepa">
+                     <a ><%= productos[i].cepa  %></a> 
+                  </div>
+                  <div class="div-img">
+                     <a href="/products/<%= productos[i].id %>"><img id="list-img" src="../images/upload/<%= productos[i].img %>" alt=""></a>
+                  </div>
+                  <div class="list-buy-prod">
+                     <a class="list-prod" href="/products/<%= productos[i].id %>"><%= productos[i].nombre  %></a>
+                     
+                     <span>Precio x unidad </span>
+                     <span class="price"> $ <%= productos[i].precio  %></span>
+                     <input type="button" class="buy-button" value="Comprar">
+                  </div>
 
-         <div class="titulo-productos"><h2 class="formato-texto">Lista de Productos</h2></div>
-          
-         
-         
-         <div class="">
-          <section class="bloqueArticulos">
-             <% for(i=0;i<productos.length ;i++){ %>
-             <article class="articulo">
-               <div>
-                 <img  id="list-img" src="../images/upload/<%= productos[i].img %>" alt="">
-               </div>
-             
-              <div class="list-buy-prod">
-               <a class="list-prod" href="/products/<%= productos[i].id %>"><%= productos[i].nombre  %></a>
-               <a ><%= productos[i].cepa  %></a> 
-                <span>Precio x unidad </span>
-                <span class="price"> $ <%= productos[i].precio  %></span>
-        
-                <input type="button" class="buy-button" value="Comprar">
-   
-              </div>
-             </article>  
-             <% } %> 
-           </section>
-       </div>
-         
-                          
-          </section>     
-         
-        </section>
+               </article>  
+               <% } %> 
+            </section>
+         </section>     
       </section>
-    </div> 
-    <br> 
-    <%- include('partials/footer.ejs')%>
-  </div>
-  </div>
-  </body>
-</html>
+   </div> 
+</div>
+<%- include('partials/footer.ejs')%>
+  
+

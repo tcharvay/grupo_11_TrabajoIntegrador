@@ -1,33 +1,22 @@
 <%- include('partials/header.ejs')%>
-
-<body>
-
+<div class="container">
     <div class="login">
-        <h2>Ingreso de usuario</h2>
-            <br>
-           
-            <section>
-                <form class='formulario' action="" method="POST">
-                    <div class='inputForm'>
-                        <i class="fas fa-envelope icon"></i>    
-                        <input id="email" name="email" type="email" placeholder="Ingrese su Email">
-                  
-                    </div>
-                    <div class='inputForm'>
-                        <i class="fas fa-key icon"></i>
-                        <input id="password" name="password" type="password" placeholder="Contraseña">
-                    
-                    </div>
-                    <button class='submit' type="submit" value='Ingresar'>Ingresar</button>
-                </form>
-                <a href="#">Recuperar Contraseña</a></small>
-                <a href="./register">Registrarse</a></small>
-            
-            </section>
+    <h2>Ingreso de usuario</h2>
+        <section>
+            <form class='formulario' action="" method="POST">
+                <div class='inputForm'>
+                    <i class="fas fa-envelope icon"></i>    
+                    <input id="email" name="email" type="email" placeholder="Ingrese su Email">
+                </div>
+                <div class='inputForm'>
+                    <i class="fas fa-key icon"></i>
+                    <input id="password" name="password" type="password" placeholder="Contraseña">
+                </div>
+                <button class='submit' type="submit" value='Ingresar'>Ingresar</button>
+            </form>
+            <a href="#">Recuperar Contraseña</a></small>
+            <a href="./register">Registrarse</a></small>
+        </section>
     </div> 
-    </div>
-    <br>
-    <br>
-    <br> 
-    <%- include('partials/footer.ejs')%>   
-</body>
+</div>
+<%- include('partials/footer.ejs')%>   

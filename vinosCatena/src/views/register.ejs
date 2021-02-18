@@ -1,108 +1,51 @@
 <%- include('partials/header.ejs')%>
+<div class="container">
+   <div class="login">
+      <h2>Registro de Usuario</h2>  
 
-<body>
-    
-<div class="login">
-    <h2>Registro de Usuario</h2>  
-    <br>  
-    <% if (typeof errors!= 'undefined') { %>
-        <p style="color:black">ERROR</p>
-     <br>  
-    <ul>
-        <%for (let i =0 ; i< errors.length ; i++){%>
-        <li style="color:red">
+      <% if (typeof errors!= 'undefined') { %>
+      <p style="color:black">ERROR</p>
+       
+      <ul>
+         <%for (let i =0 ; i< errors.length ; i++){%>
+         <li style="color:red">
             <%=errors[i].msg%>
-        </li>
-        <% } %>    
-    </ul>  
-    <% } %>
-    <br>     
-            <section>
-                <form class='formulario' action="" method="POST">
-                    <div class='inputForm'>
-                        <i class="fa fa-user icon"></i>    
-                        <input id="apellido" name="apellido" type="text" placeholder="Apellido">
-                    </div>
-                    <div class='inputForm'>
-                        <i class="fa fa-user icon"></i>    
-                        <input id="nombre" name="nombre" type="text" placeholder="Nombre">
-                    </div>  
-                    <div class='inputForm'>
-                        <i class="fas fa-envelope icon"></i>    
-                        <input id="email" name="email" type="email" placeholder="Ingrese su Email">
-                    </div>
-                    <div class='inputForm'>
-                        <i class="fas fa-key icon"></i>
-                        <input id="password" name="password" type="password" placeholder="Contraseña">
-                    
-                    </div>
-                    <!--<div class='inputForm'>
-                        <i class="fas fa-key icon"></i>
-                        <input id="passwordC" name="passwordC" type="password" placeholder="Confirmar Contraseña">
-                    </div>-->
-                    <div>
-                        <input class="terminos" type="checkbox" required> <small> Acepto terminos y condiciones   </small>
-                      </div>
-                    <div class="buttons">
-                        <button class='submit' type="reset" value='limpiar'>Borrar</button>
-                        <button class='submit' type="submit" value='cargaDatos'>Registrar</button>
-                    </div> 
-                </form>
-            
-            </input>
-            </section>
-        </div>
-        </div>
-        <br> 
-        <br> 
-        <br> 
-        <%- include('partials/footer.ejs')%>
-    </body>
-<<<<<<< HEAD
-=======
-<!--
-        <section class="tituloRegistro"><h2>Completa tus datos</h2></section>
-        
-        <section class="tablasRegistro">
-            <table>
-            <form action=“register.html” method=“POST”>
-                <tr> 
-                <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
-                </tr>
-                <tr> 
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
-                </tr>
-            </table>
-            <table>
-                <tr>
-                <input type="number" id="dni" name="dni" placeholder="DNI"required>
-                </tr>
-                <tr> 
-                <input type="number" id="tel" name="tel" placeholder="Teléfono"required>
-                </tr>
-            </table>
-            <table>
-                <tr>
-                <input type=“email” id=“email” name=“email”  placeholder="Email"required>
-                </tr>
-                <tr>
-                <input type=“email” id=“email” name=“email” placeholder="Confirmación Email"  required>
-                </tr>
-            </table>          
-            <table>
-                <tr>
-                <input type="password" id="Contrasena" name='Contrasena' placeholder="Clave" required>
-                <input type="password" id="Contrasena" name='Contrasena' placeholder="Confirmación Clave"required>
-                </tr>
-            </table>
-            <input type="checkbox" required><small>Acepto terminos y condiciones</small>   
-            </input>
-            <p>          
-            <button class="submit"type=“submit”>Enviar</button>
-            </p>
-            </form>
-        </section>
-    -->  
->>>>>>> 17d01300954e9feeca0cff282f8901512591eb4f
-
-</html>
+         </li>
+         <% } %>    
+      </ul>  
+      <% } %>
+     
+      <section>
+         <form class='formulario' action="" method="POST">
+            <div class='inputForm'>
+               <i class="fa fa-user icon"></i>    
+               <input id="apellido" name="apellido" type="text" placeholder="Apellido">
+            </div>
+            <div class='inputForm'>
+               <i class="fa fa-user icon"></i>    
+               <input id="nombre" name="nombre" type="text" placeholder="Nombre">
+            </div>  
+            <div class='inputForm'>
+               <i class="fas fa-envelope icon"></i>    
+               <input id="email" name="email" type="email" placeholder="Ingrese su Email">
+            </div>
+            <div class='inputForm'>
+               <i class="fas fa-key icon"></i>
+               <input id="password" name="password" type="password" placeholder="Contraseña">
+            </div>
+            <div class='inputForm'>
+               <i class="fas fa-key icon"></i>
+               <input id="passwordC" name="passwordC" type="password" placeholder="Confirmar Contraseña">
+            </div>
+            <div>
+               <input class="terminos" type="checkbox" required> <small> Acepto terminos y condiciones   </small>
+            </div>
+            <div class="buttons">
+               <button class='submit' type="reset" value='limpiar'>Borrar</button>
+               <button class='submit' type="submit" value='cargaDatos'>Registrar</button>
+            </div> 
+         </form>
+      </section>
+   </div>
+</div>   
+<%- include('partials/footer.ejs')%>

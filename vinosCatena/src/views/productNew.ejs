@@ -1,44 +1,46 @@
 <%- include('partials/header.ejs')%>
-   <div class="container">
-      <div class="banner"></div>
-      <div class="carga-producto">
-         <form class='formulario' action="" method="POST" enctype="multipart/form-data">
-            <div class='inputForm'>    
-               <i class="fas fa-tags"></i>                      
-               <input id="producto" name="nombre" type="text" placeholder="Nombre del Vino" required>
-            </div>
-            <div class="inputForm">
-               <i class="far fa-file-alt"></i>
-               <label for="descrpicion">Descripcion</label>
-               <textarea class="inputForm" name= "descripcion" type="textArea" id="textArea" rows="3"></textarea>
-            </div>
-            <div class='inputForm'>
-               <i class="fas fa-wine-glass-alt"></i>
-               <span>Cepa: </span>
-               <select id="cepa" name="cepa" class="car-cepa">
-                  <option value="cabernetFrank">Cabernet Frank</option>
-                  <option value="cabernetSuavignon">Cabernet Suavignon</option>
-                  <option value="chardonay">Chardonay</option>
-                  <option value="malbec">Malbec</option>
-                  <option value="merlot">Merlot</option>
-                  <option value="syrah">Syrah</option>
-                  <option value="suavignonBlanc">Suavignon Blanc</option>
-               </select>    
-            </div>
-            <div class="inputForm">
-               <i class="far fa-image"></i>
-               <label type="text" for="imagen"></label>
-               <input type="file" class="" id="imagen" name="imagen">
-            </div>
-            <div class='inputForm'>
-                <i class="fas fa-dollar-sign"></i>
-                <input id="precio" name="precio" type="number" placeholder="Precio" required>
-             </div>
-             <div class="buttons">
-                <button class='submit' type="reset" value='limpiar'>Borrar</button>
-                <button class='submit' type="submit" value='cargaDatos'>Cargar</button>
-             </div> 
-          </form>           
-      </div>
+<div class="container">
+   <div class="banner"></div>
+   
+   <div class="carga-producto">
+      
+      <form class='formulario' action="" method="POST" enctype="multipart/form-data">
+         <div class='inputForm'>    
+            <i class="fas fa-tags"></i>                      
+            <input id="producto" name="nombre" type="text" placeholder="Nombre del Vino" required>
+         </div>
+         <div class="inputForm">
+            <i class="far fa-file-alt"></i>
+            <label for="descrpicion">Descripcion</label>
+            <textarea class="inputForm" name= "descripcion" type="textArea" id="textArea" rows="3"></textarea>
+         </div>
+         <div class='inputForm'>
+            <i class="fas fa-wine-glass-alt"></i>
+            <span>Cepa: </span>
+            <select id="cepa" name="cepa" class="car-cepa">
+               <option value="cabernetFrank">Cabernet Frank</option>
+               <option value="cabernetSuavignon">Cabernet Suavignon</option>
+               <option value="chardonay">Chardonay</option>
+               <option value="malbec">Malbec</option>
+               <option value="merlot">Merlot</option>
+               <option value="syrah">Syrah</option>
+               <option value="suavignonBlanc">Suavignon Blanc</option>
+            </select>    
+         </div>
+         <div class="inputForm">
+            <i class="far fa-image"></i>
+            <label type="text" for="imagen"></label>
+            <input type="file" class="" id="imagen" name="imagen">
+         </div>
+         <div class='inputForm'>
+             <i class="fas fa-dollar-sign"></i>
+             <input id="precio" name="precio" type="number" placeholder="Precio" required>
+          </div>
+          <div class="buttons">
+             <button class='submit' type="reset" value='limpiar'>Borrar</button>
+             <button class='submit' type="submit" value='cargaDatos'>Cargar</button>
+          </div> 
+       </form>           
    </div>
+</div>
 <%- include('partials/footer.ejs')%>   

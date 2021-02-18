@@ -12,14 +12,11 @@ module.exports ={
     },
     empresa: function(req, res, next) {
         res.render('empresa') 
-    },
-    ubicacion: function(req, res, next) {
+    },    ubicacion: function(req, res, next) {
         res.render('ubicacion') 
     },
     contacto: function(req, res, next) {
         res.render('contacto') 
-    },
-    productos: function(req, res, next) {
-        res.render('listaProductos') 
     }
+    
 }
