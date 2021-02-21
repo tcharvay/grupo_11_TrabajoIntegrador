@@ -19,11 +19,17 @@
           <a href=""><i class="fas fa-search"></i> Buscar </a>
         </div>
         <div class="carrito">
-          <a href="/carrito"><i class="fas fa-shopping-cart"></i> Carrito </a>
+          <a href="/cart"><i class="fas fa-shopping-cart"></i> Carrito </a>
         </div>
-        <div class="usuarios">
-          <a href="/users/login"><i class="fa fa-user"></i> Usuarios </a>
-        </div>
+        <% if( typeof usuarioLogueado != 'undefined'){ %> 
+          <div class="usuarios">
+             <a href="/users/login"><i class="fa fa-user"></i> <%=locals.usuarioLogueado.email%>   </a>
+          </div>
+          <% } else { %> 
+          <div class="usuarios">
+            <a href="/users/login"><i class="fa fa-user"></i> Usuarios </a>
+         </div>
+         <% } %> 
      </nav>
     </header>
 </body>

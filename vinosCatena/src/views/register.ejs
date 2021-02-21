@@ -2,50 +2,55 @@
 <div class="container">
    <div class="login">
       <h2>Registro de Usuario</h2>  
-
-      <% if (typeof errors!= 'undefined') { %>
-      <p style="color:black">ERROR</p>
-       
-      <ul>
-         <%for (let i =0 ; i< errors.length ; i++){%>
-         <li style="color:red">
-            <%=errors[i].msg%>
-         </li>
-         <% } %>    
-      </ul>  
-      <% } %>
-     
+      <br>  
+    <% if (typeof errors!= 'undefined') { %>
+        <p style="color:red">ERROR</p>
+        <% } %> 
+    <br>  
       <section>
-         <form class='formulario' action="" method="POST">
-            <div class='inputForm'>
-               <i class="fa fa-user icon"></i>    
-               <input id="apellido" name="apellido" type="text" placeholder="Apellido">
-            </div>
-            <div class='inputForm'>
-               <i class="fa fa-user icon"></i>    
-               <input id="nombre" name="nombre" type="text" placeholder="Nombre">
-            </div>  
-            <div class='inputForm'>
-               <i class="fas fa-envelope icon"></i>    
-               <input id="email" name="email" type="email" placeholder="Ingrese su Email">
-            </div>
-            <div class='inputForm'>
-               <i class="fas fa-key icon"></i>
-               <input id="password" name="password" type="password" placeholder="Contraseña">
-            </div>
-            <div class='inputForm'>
-               <i class="fas fa-key icon"></i>
-               <input id="passwordC" name="passwordC" type="password" placeholder="Confirmar Contraseña">
-            </div>
-            <div>
-               <input class="terminos" type="checkbox" required> <small> Acepto terminos y condiciones   </small>
-            </div>
-            <div class="buttons">
-               <button class='submit' type="reset" value='limpiar'>Borrar</button>
-               <button class='submit' type="submit" value='cargaDatos'>Registrar</button>
-            </div> 
+         <form class='formulario' action="/users/register" method="POST">
+             <div class='inputForm'>
+                 <i class="fa fa-user icon"></i>    
+                 <input id="apellido" name="apellido" type="text" placeholder="Apellido"value=<%= (typeof old != 'undefined' && !errors.apellido) ? old.apellido : '' %>>
+                 
+             </div>
+             <p class="errores">
+                 <%= (typeof errors !='undefined' && errors.apellido) ? errors.apellido.msg : '' %>
+             </p>
+             <div class='inputForm'>
+                 <i class="fa fa-user icon"></i>    
+                 <input id="nombre" name="nombre" type="text" placeholder='Nombre'value=<%= (typeof old != 'undefined' && !errors.nombre) ? old.nombre : '' %>>
+             </div>
+             <p class="errores">
+                 <%= (typeof errors !='undefined' && errors.nombre) ? errors.nombre.msg : '' %>
+             </p>  
+             <div class='inputForm'>
+                 <i class="fas fa-envelope icon"></i>    
+                 <input id="email" name="email" type="email" placeholder="Ingrese su Email" value=<%= (typeof old != 'undefined' && !errors.email) ? old.email : '' %>>
+             </div>
+             <p class="errores">
+                 <%= (typeof errors !='undefined' && errors.email) ? errors.email.msg : '' %>
+             </p>
+             <div class='inputForm'>
+                 <i class="fas fa-key icon"></i>
+                 <input id="password" name="pasword" type="password" placeholder="Contraseña">
+             </div><p class="errores">
+                 <%= (typeof errors !='undefined' && errors.pasword) ? errors.pasword.msg : '' %>
+             </p>    
+                 <br>
+                 <br>                                     
+             
+             <div>
+                 <input class="terminos" type="checkbox" required> <small> Acepto terminos y condiciones   </small>
+               </div>
+             <div class="buttons">
+                 <button class='submit' type="reset" value='limpiar'>Borrar</button>
+                 <button class='submit' type="submit" value='cargaDatos'>Registrar</button>
+             </div> 
          </form>
-      </section>
+     
+     </input>
+     </section>
    </div>
 </div>   
 <%- include('partials/footer.ejs')%>

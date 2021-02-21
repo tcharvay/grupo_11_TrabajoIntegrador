@@ -4,6 +4,7 @@ const bcrypt= require ('bcrypt');
 var usuarios = fs.readFileSync(path.join(__dirname,'../data/usuarios.json'), 'utf8');
 var usuarios=JSON.parse(usuarios);
 let{ckeck,validationResult,body, check}= require('express-validator');
+
 module.exports ={
     login: function(req, res) {
         res.render('login') 
@@ -11,9 +12,13 @@ module.exports ={
     logueado: function(req, res) {            
          for (let i = 0; i < usuarios.length; i++) {
              //console.log(usuarios[i].email)
-            if(usuarios[i].email == req.body.email) {
+            if(usuarios[i].email == req.body.email) {                
                 if(bcrypt.compareSync(req.body.pasword, usuarios[i].pasword) == true){
-                    return  res.send ('hola')
+                    req.session.usuarioLogueado={
+                      email:usuarios[i].email  
+                    }                                      
+                     return  res.render('cartView');
+                        
                  }                             
           }    
         }return  res.render('login') 
@@ -34,8 +39,11 @@ module.exports ={
         fs.writeFileSync(path.join(__dirname,'../data/usuarios.json'),JSON.stringify(usuarios));
          res.render('login')
      }else {
-         return res.render('register',{errors:errors.errors})
-     }
+		res.render('register', {
+		    errors: errors.mapped(),
+			old: req.body
+    })
+}
     
 },
 }
