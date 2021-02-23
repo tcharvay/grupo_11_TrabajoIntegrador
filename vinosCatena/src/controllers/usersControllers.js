@@ -17,7 +17,7 @@ module.exports ={
                     req.session.usuarioLogueado={
                       email:usuarios[i].email  
                     }                                      
-                     return  res.render('cartView');
+                     return  res.redirect('/');
                         
                  }                             
           }    

@@ -23,7 +23,14 @@
         </div>
         <% if( typeof usuarioLogueado != 'undefined'){ %> 
           <div class="usuarios">
-             <a href="/users/login"><i class="fa fa-user"></i> <%=locals.usuarioLogueado.email%>   </a>
+            <div class ="navUsuarios">
+             
+             <ul>
+              <li><i class="fa fa-user"> <%=locals.usuarioLogueado.email%> </i></li>
+               <a><li class="listaNav">administrador</li></a>
+               <a><li class="listaNav">cerrar session</li></a>
+             </ul>  
+            </div>                       
           </div>
           <% } else { %> 
           <div class="usuarios">
