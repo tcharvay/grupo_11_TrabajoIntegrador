@@ -17,6 +17,10 @@ module.exports ={
     },
     contacto: function(req, res, next) {
         res.render('contacto') 
-    }
+    },
+    logout :function (req, res) {
+        req.session.destroy();
+        res.redirect("/users/login");
+      },
     
 }

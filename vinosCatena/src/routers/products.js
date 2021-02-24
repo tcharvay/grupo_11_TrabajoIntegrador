@@ -3,6 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const path = require ('path');
 const metodhOverride = require ('method-override');
+const administrador = require ("../middelwares/administrador")
 
 const productsController = require('../controllers/productsController')
 
@@ -20,7 +21,7 @@ var storage = multer.diskStorage({
 
 
 router.get('/', productsController.listaProductos);
-//router.get('/products',productsController.listaProductos)
+router.get('/productNew.ejs',administrador,productsController.new);
 router.get('/:id', productsController.detProducto);
 router.get('/new', productsController.new);
 router.post('/new', upload.any(), productsController.create)

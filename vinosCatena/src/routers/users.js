@@ -4,7 +4,6 @@ const fs = require('fs');
 const path = require('path');
 const validacion = require ("../middelwares/validacion")
 
-
 const usersControllers = require ('../controllers/usersControllers')
 
 router.get('/login', usersControllers.login);

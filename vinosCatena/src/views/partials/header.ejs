@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,14 +22,15 @@
         <div class="carrito">
           <a href="/cart"><i class="fas fa-shopping-cart"></i> Carrito </a>
         </div>
+      
         <% if( typeof usuarioLogueado != 'undefined'){ %> 
           <div class="usuarios">
             <div class ="navUsuarios">
              
              <ul>
               <li><i class="fa fa-user"> <%=locals.usuarioLogueado.email%> </i></li>
-               <a><li class="listaNav">administrador</li></a>
-               <a><li class="listaNav">cerrar session</li></a>
+               <li class="listaNav"><a href="/products/productNew.ejs">administrador</a></li>
+               <li class="listaNav"><a href="/logout">cerrar session</a></li>
              </ul>  
             </div>                       
           </div>
@@ -39,4 +41,4 @@
          <% } %> 
      </nav>
     </header>
-</body>
+  </body>
