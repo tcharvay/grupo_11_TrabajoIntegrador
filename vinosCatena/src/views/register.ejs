@@ -6,7 +6,8 @@
     <% if (typeof errors!= 'undefined') { %>
         <p style="color:red">ERROR</p>
         <% } %> 
-    <br>  
+    <br> 
+       
       <section>
          <form class='formulario' action="/users/register" method="POST">
              <div class='inputForm'>
@@ -36,7 +37,18 @@
                  <input id="password" name="pasword" type="password" placeholder="Contraseña">
              </div><p class="errores">
                  <%= (typeof errors !='undefined' && errors.pasword) ? errors.pasword.msg : '' %>
-             </p>    
+             </p> 
+             <% if( typeof usuarioLogueado != 'undefined'){ %> 
+                <% if(usuarioLogueado.administrador=="true"){ %> 
+                    <div class='inputForm'>
+                        <select id="select" name="select">
+                            <option value="true">true</option>
+                            <option value="false">false</option>
+                          </select> 
+                        
+                    </div>
+                <% } %> 
+            <% } %>  
                  <br>
                  <br>                                     
              

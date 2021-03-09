@@ -34,6 +34,29 @@ body {
    position: relative;
    box-sizing: content-box;
   }   
+  .errores{
+    color:red;
+    font-size: 17px;
+  }
+  .navUsuarios {
+    background-color: black;
+    position: relative;
+    display: block;
+    top: 0.60cm;
+        
+  }
+  
+  .listaNav{
+  background-color:black;  
+   position: relative;
+   width: 50mm;
+   top: 0.4cm;
+   display: block;
+   z-index: 1
+  }
+  /* .navUsuarios li:hover .listaNav{
+    display: none;
+  } */
 
 .container {
   width: 98%;

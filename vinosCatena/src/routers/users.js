@@ -9,6 +9,6 @@ const usersControllers = require ('../controllers/usersControllers')
 router.get('/login', usersControllers.login);
 router.post('/login', usersControllers.logueado);
 router.get('/register', usersControllers.register);
-router.post('/register',validacion,usersControllers.create);
+router.post('/register',validacion,usersControllers.crear);
 
 module.exports = router;

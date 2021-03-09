@@ -7,7 +7,8 @@ const vistaUsuario = require ('./middelwares/vistaUsuario')
 const indexRouter = require('./routers/index');
 const productsRouter = require('./routers/products');
 const usersRouter = require('./routers/users');
-const cartRouter = require ('./routers/cart')
+const cartRouter = require ('./routers/cart');
+const permisos = require ('./middelwares/permisos')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
