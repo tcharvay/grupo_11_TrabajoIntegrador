@@ -6,39 +6,43 @@
       <section class="cuerpo">
          <section class="list-menu"> 
                <ul >
-                  <li><a href="/cabernetFrank"class="lista">Cabernet Frank</a></li>
+                  <li><a href=""class="lista">Cabernet Frank</a></li>
                   <li><a href=""class="lista">Cabernet Suavignon</a></li>
                   <li><a href=""class="lista">Chardonnay</a></li>
                   <li><a href=""class="lista">Malbec</a></li>
                   <li><a href=""class="lista">Merlot</a></li>
+                  <li><a href=""class="lista">Pinot Noir</a></li>
                   <li><a href=""class="lista">Sauvignon Blanc</a></li>
-                  <li><a href="/products"class="lista2">ABM de Productos</a></li>
+
+                  <!-- <li><a href="/products"class="lista2">ABM de Productos</a></li> -->
                </ul>   
          </section>
       
-         <section class="carousel-container">
-            <section class="container-cards">
-               <% for(i=0;i<productos.length ;i++){ %>
-               <article class="article">
-                  <div class="cepa">
-                     <a ><%= productos[i].cepa  %></a> 
-                  </div>
-                  <div class="div-img">
-                     <a href="/products/<%= productos[i].id %>"><img id="list-img" src="../images/upload/<%= productos[i].img %>" alt=""></a>
-                  </div>
-                  <div class="list-buy-prod">
-                     <a class="list-prod" href="/products/<%= productos[i].id %>"><%= productos[i].nombre  %></a>
-                     
-                     <span>Precio x unidad </span>
-                     <span class="price"> $ <%= productos[i].precio  %></span>
-                     <input type="button" class="buy-button" value="Comprar">
-                  </div>
 
-               </article>  
-               <% } %> 
-            </section>
-         </section>     
-      </section>
+         <div class="row row-cols-1 row-cols-md-3 g-3">
+            <% for(i=0;i<products.length ;i++){ %>
+            <div class="col" style="width: 18rem;">
+              <div class="card justify-content-center ">
+               <a href="/products/detail/<%= products[i].id %>"><img class=" rounded mx-auto mt-1 d-block" style="width: 8rem;"src="../images/upload/<%= products[i].image.path %>" alt=""></a>
+                <div class="card-body justify-content-center ">
+                  <h5 class="card-title text-center" href="/products/detail/<%= products[i].id %>"><%= products[i].name  %></h5>
+                  <p class="text-center "><strong>  <%= products[i].cepas.name  %> </strong></p>
+                  <div class="card-text  text-center">
+                     <small>Precio: </small>
+                     <span class="price"> $ <%= products[i].price  %></span>
+                     <div class="d-grid gap-2 d-md-block d-grid gap-2 d-md-block mt-2">
+                        <a href="/products/detail/<%= products[i].id  %>"><button class="btn btn-outline-info"  type="button"> Ver Producto</button></a> 
+                        <button value="Comprar" class="btn btn-success" type="button"> <i class="fas fa-cart-plus" size= "2px"></i> Comprar</button>
+                      </div>
+                     
+                     </div>
+                   </div>
+              </div>
+            </div>
+            <% } %>
+         </div>
+
+     </section>
    </div> 
 </div>
 <%- include('partials/footer.ejs')%>

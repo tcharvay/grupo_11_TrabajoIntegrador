@@ -1,0 +1,55 @@
+<%- include('partials/header.ejs')%>
+
+<div class="container">
+  <div class="banner"> </div>
+  
+   <div class="article-back">
+      <div class="article-card-h">
+         
+         <div class="card-img-det">
+            <img id="img-det" src="../../images/upload/<%= products.image.path %>" alt="">
+         </div>
+         
+         <div class="card-text">
+                    
+            <form  method="POST" enctype="multipart/form-data">
+                <div class='inputForm'>    
+                   <i class="fas fa-tags"></i>                      
+                   <input id="producto" name="nombre" type="text" value="<%= products.name  %>">
+                </div>
+                <div class="inputForm">
+                   <i class="far fa-file-alt"></i>
+                   <label for="descrpicion">Descripcion</label>
+                   <textarea class="inputForm" name= "descripcion" type="textArea" id="textArea" rows="3" ><%= products.description  %></textarea>
+                </div>
+                <div class='inputForm'>
+                   <i class="fas fa-wine-glass-alt"></i> 
+                   <span>Cepa: </span>
+                   <select id="cepa" name="cepa" class="car-cepa" >
+                      <% for (let i=0; i< listaCepas.length; i++) { %>
+                        <% if (listaCepas[i].id == products.id_cepa) { %>
+                      <option value="<%= listaCepas[i].id %>" selected><%= listaCepas[i].name  %></option> 
+                      <% } else { %>
+                        <option value="<%= listaCepas[i].id %>"><%= listaCepas[i].name  %></option>
+                      <% } } %>
+                     </select>    
+                </div>
+                <div class='inputForm'>
+                    <i class="fas fa-dollar-sign"></i>
+                    <input id="precio" name="precio" type="number" value="<%= products.price  %>">
+                 </div>   
+                 <div class="d-flex justify-content-around">
+                  <button class="btn btn-success" type="submit" value="Editar" >Actualizar</button> 
+                     
+                  <a href="/products" class="btn btn-dark" value="Volver">Cancelar </a>
+               </div>      
+                  </form>
+               </div>
+         
+      </div>  
+   </div>
+</div>
+
+
+<%- include('partials/footer.ejs')%>
+</html>

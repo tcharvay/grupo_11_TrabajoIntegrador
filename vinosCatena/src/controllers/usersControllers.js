@@ -32,7 +32,7 @@ module.exports ={
     },
     crear :  function(req, res){
       let errors = validationResult(req);
-       if (errors.isEmpty()){ 
+      if (errors.isEmpty()){ 
          db.Usuarios.create({
          apellido :req.body.apellido,
          nombre : req.body.nombre,    

@@ -27,7 +27,8 @@ module.exports = function(sequelize, dataTypes) {
                         
         },
         administrador: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING(1),
+            default: "0",
             
                         
         }

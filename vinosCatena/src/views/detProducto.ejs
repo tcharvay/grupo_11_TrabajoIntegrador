@@ -3,45 +3,67 @@
 <div class="container">
   <div class="banner"> </div>
   
-   <section class="article-back">
-      <article class="article-card-h">
-         <div class="card-img-det">
-            <img id="img-det" src="../images/upload/<%= products.img %>" alt="">
-         </div>
-         
-         <div class="card-text">
-            <h2 class="title-prod"><%= products.nombre  %></h2>
-            <h4 class="subtitle-prod"><%= products.cepa  %></h4> 
-            <h4 class="subtitle-prod"><%= products.descripcion  %></h4>
-             
-            <span>Precio x unidad </span>
-            <span class="price"> $ <%= products.precio  %></span>
+  <section class="article-back">
+  <div class="card mb-3" style="max-width: 600px;">
+   <div class="row no-gutters">
+     <div class="col-md-4">
+      <img id="img-det" class=" rounded mx-auto mt-1 d-block" style="width: 12rem;" src="../../images/upload/<%= products.image.path %>" alt="">
+     </div>
+     <div class="col-md-6 m-4 p-2">
+       <div class="card-body center">
+      
+         <h3 class="card-title"><%= products.name  %></h3>
+         <h4 class="card-title" ><strong><%= products.cepas.name  %></strong></h4> 
+         <h5 class="card-text"><%= products.description  %></h4>
             <br><br><br>
-            
-            <small>Tarjeta de Debito/Credito hasta en 3 cuotas sin interes</small>
-            <br> <br>
-            <span>Cantidad</span>
-            <select id="unit-cant" name="unit_cant" class="unit-cant">
-               <option value="1">1</option>
-               <option value="2">2</option>
-               <option value="3">3</option>
-               <option value="4">4</option>
-               <option value="5">5</option>
-               <option value="6">6</option>
-               <option value="7">7</option>
-               <option value="8">8</option>
-               <option value="9">9</option>
-               <option value="10">10</option>
-               <option value="11">11</option>
-               <option value="12">12</option>
-           
-            </select>            
-            
-            <div class="buttons-buy">
-               <a href="/" class="back-button" value="Volver">Volver </a>
-               <input type="button" class="buy-button" value="Agregar al carrito">
+         <span>Precio: </span>
+         <span class="price"> $ <%= products.price  %></span> 
+         <span>Cantidad</span>
+         <select id="unit-cant" name="unit_cant" class="unit-cant">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        
+         </select>   <br><br><br>
+         <small>Tarjeta de Debito/Credito hasta en 3 cuotas sin interes</small>
+            <br> 
+                     
+            <br><br><br><br><br>
+            <div class="d-flex justify-content-end m-2">
+               <a href="/"><button class="btn btn-outline-info m-2"  type="button"> Volver</button></a> 
+               <button value="Comprar" class="btn btn-success m-2" type="button"> <i class="fas fa-cart-plus" size= "2px"></i> Comprar</button>               
             </div>  
-         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+      <article class="article-card-h">
+      
       </article>  
    </section>
 </div>

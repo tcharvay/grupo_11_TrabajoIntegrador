@@ -4,8 +4,9 @@ const multer = require('multer');
 const path = require ('path');
 const metodhOverride = require ('method-override');
 const administrador = require ("../middelwares/administrador")
-
-const productsController = require('../controllers/productsController')
+//const validarProductos = require ("../middelwares/validarProductos");
+const productsController = require('../controllers/productsController');
+const { Router } = require('express');
 
 
 var storage = multer.diskStorage({
@@ -13,7 +14,7 @@ var storage = multer.diskStorage({
       cb(null, path.join(__dirname,'../../public/images/upload'))
     },
     filename: function (req, file, cb) {
-      cb(null, file.originalname)
+      cb(null, 'img-'+file.originalname)
     }
   })
    
@@ -21,13 +22,15 @@ var storage = multer.diskStorage({
 
 
 router.get('/',administrador,productsController.listaProductos);
-router.get('/productNew.ejs',productsController.new);
-router.get('/:id', productsController.detProducto);
-router.get('/new', productsController.new);
-router.post('/new', upload.any(), productsController.create)
+//router.get ('/', productsController.listaProductos); 
+router.get('/detail/:id', productsController.detProducto);
 
-router.get('/detail/:id', productsController.detail);
-router.put ('/edit/:id', productsController.edit);
-router.delete('/delete/:id', productsController.delete);
+router.get('/newProduct', productsController.newProduct);
+router.post('/newProduct', upload.any(), productsController.createProduct);
+
+router.get('/edit/:id', productsController.edit);
+router.post('/edit/:id', upload.any(),productsController.update);
+
+router.post('/delete/:id', productsController.delete);
 
 module.exports = router;

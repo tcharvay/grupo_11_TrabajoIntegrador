@@ -11,7 +11,7 @@ module.exports = function(req,res,next){
     }else{
     for (let i = 0; i < usuarios.length; i++) {
         if(req.session.usuarioLogueado.email==usuarios[i].email){
-            if(usuarios[i].administrador=="true"){
+            if(usuarios[i].administrador=="1"){
                 next()  
             }else{
                 //window.alert("no tienes esos permisos");

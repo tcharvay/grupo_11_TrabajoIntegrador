@@ -56,9 +56,9 @@ header{
     text-decoration: none;
   }
   
-  i {
+  header i {
     font-size: 24px;
-    color: #b1a7a6;
+    color: white;
     align-content: center;
     padding: 2px;
     min-width: 50px;

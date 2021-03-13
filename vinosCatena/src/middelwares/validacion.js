@@ -2,7 +2,8 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const bcrypt=require ('bcrypt');
-const db = require('../dataBase/models')
+const db = require('../dataBase/models');
+
 let{ckeck,validationResult,body, check}= require('express-validator');
 module.exports = [
   

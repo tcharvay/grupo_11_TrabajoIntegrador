@@ -4,40 +4,44 @@
       <h2>Registro de Usuario</h2>  
       <br>  
     <% if (typeof errors!= 'undefined') { %>
-        <p style="color:red">ERROR</p>
+        <p style="color:red"> Verifique los ERRORES</p>
         <% } %> 
     <br> 
        
       <section>
          <form class='formulario' action="/users/register" method="POST">
-             <div class='inputForm'>
+            <small class="errores">
+                <%= (typeof errors !='undefined' && errors.apellido) ? errors.apellido.msg : '' %>
+            </small>
+            <div class='inputForm'>
                  <i class="fa fa-user icon"></i>    
                  <input id="apellido" name="apellido" type="text" placeholder="Apellido"value=<%= (typeof old != 'undefined' && !errors.apellido) ? old.apellido : '' %>>
-                 
              </div>
-             <p class="errores">
-                 <%= (typeof errors !='undefined' && errors.apellido) ? errors.apellido.msg : '' %>
-             </p>
+        
+             <small class="errores">
+                <%= (typeof errors !='undefined' && errors.nombre) ? errors.nombre.msg : '' %>
+            </small>
              <div class='inputForm'>
                  <i class="fa fa-user icon"></i>    
                  <input id="nombre" name="nombre" type="text" placeholder='Nombre'value=<%= (typeof old != 'undefined' && !errors.nombre) ? old.nombre : '' %>>
              </div>
-             <p class="errores">
-                 <%= (typeof errors !='undefined' && errors.nombre) ? errors.nombre.msg : '' %>
-             </p>  
+               
+             <small class="errores">
+                <%= (typeof errors !='undefined' && errors.email) ? errors.email.msg : '' %>
+            </small>
              <div class='inputForm'>
                  <i class="fas fa-envelope icon"></i>    
                  <input id="email" name="email" type="email" placeholder="Ingrese su Email" value=<%= (typeof old != 'undefined' && !errors.email) ? old.email : '' %>>
              </div>
-             <p class="errores">
-                 <%= (typeof errors !='undefined' && errors.email) ? errors.email.msg : '' %>
-             </p>
+             
+             <small class="errores">
+                <%= (typeof errors !='undefined' && errors.pasword) ? errors.pasword.msg : '' %>
+            </small>
              <div class='inputForm'>
                  <i class="fas fa-key icon"></i>
                  <input id="password" name="pasword" type="password" placeholder="Contraseña">
-             </div><p class="errores">
-                 <%= (typeof errors !='undefined' && errors.pasword) ? errors.pasword.msg : '' %>
-             </p> 
+             </div>
+              
              <% if( typeof usuarioLogueado != 'undefined'){ %> 
                 <% if(usuarioLogueado.administrador=="true"){ %> 
                     <div class='inputForm'>

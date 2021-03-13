@@ -4,7 +4,7 @@
    
    <div class="carga-producto">
       
-      <form class='formulario' action="" method="POST" enctype="multipart/form-data">
+      <form class='formulario' action="" method="POST" enctype="multipart/form-data" >
          <div class='inputForm'>    
             <i class="fas fa-tags"></i>                      
             <input id="producto" name="nombre" type="text" placeholder="Nombre del Vino" required>
@@ -16,15 +16,11 @@
          </div>
          <div class='inputForm'>
             <i class="fas fa-wine-glass-alt"></i>
-            <span>Cepa: </span>
+            <label>Cepa: </label>
             <select id="cepa" name="cepa" class="car-cepa">
-               <option value="cabernetFrank">Cabernet Frank</option>
-               <option value="cabernetSuavignon">Cabernet Suavignon</option>
-               <option value="chardonay">Chardonay</option>
-               <option value="malbec">Malbec</option>
-               <option value="merlot">Merlot</option>
-               <option value="syrah">Syrah</option>
-               <option value="suavignonBlanc">Suavignon Blanc</option>
+               <% for (let i=0; i<cepas.length ;i++){ %>
+               <option value="<%= cepas[i].id %>"><%=cepas[i].name %></option>
+               <% } %>
             </select>    
          </div>
          <div class="inputForm">
