@@ -2,7 +2,6 @@ const db = require ('../dataBase/models');
 let{ckeck,validationResult,body, check}= require('express-validator');
 
 module.exports ={
-
    newProduct:(req, res)=>{
         db.Cepa.findAll()
         .then ((cepas)=>{

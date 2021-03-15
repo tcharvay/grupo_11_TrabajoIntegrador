@@ -1,13 +1,15 @@
 <%- include('partials/header.ejs')%>
 <div class="container">
    <div class="login">
-      <h2>Registro de Usuario</h2>        
+      <h2>Registro de Usuario</h2>  
+      <br>  
     <% if (typeof errors!= 'undefined') { %>
         <p style="color:red"> Verifique los ERRORES</p>
-        <p style="color:red"> <%= (typeof errors !='undefined') ? errors.msg : '' %></p>
-        <% } %>           
+        <% } %> 
+    <br> 
+       
       <section>
-        <form class='formulario' action="/users/register" method="POST">|
+         <form class='formulario' action="/administrador/registerAdmin" method="POST">
             <small class="errores">
                 <%= (typeof errors !='undefined' && errors.apellido) ? errors.apellido.msg : '' %>
             </small>
@@ -38,14 +40,24 @@
              <div class='inputForm'>
                  <i class="fas fa-key icon"></i>
                  <input id="password" name="pasword" type="password" placeholder="Contraseña">
-             </div>            
-            <div>
+             </div>             
+                <div class='inputForm'>
+                        <select id="select" name="select">
+                            <option value="true">true</option>
+                            <option value="false">false</option>
+                          </select> 
+                        
+                    </div>
+                 <br>
+                 <br>                                     
+             
+             <div>
                  <input class="terminos" type="checkbox" required> <small> Acepto terminos y condiciones   </small>
                </div>
              <div class="buttons">
                  <button class='submit' type="reset" value='limpiar'>Borrar</button>
                  <button class='submit' type="submit" value='cargaDatos'>Registrar</button>
-             </div>
+             </div> 
          </form>
      
      </input>
