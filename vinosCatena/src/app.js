@@ -17,6 +17,7 @@ app.set('view engine', 'ejs');
 app.use(session({secret:'un mensaje'}));
 app.use(vistaUsuario);
 app.use(express.json());
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(methodOverride('_method'));

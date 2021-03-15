@@ -6,30 +6,44 @@
       <section class="list-menu"> 
         <ul >
           <li><a href=""class="lista">Perfil</a></li>
-          <li><a href="/administrador/registerAdmin"class="lista">Cargar Usuario Administrativo</a></li>
+       
           <li><a href="/products/newProduct"class="lista2">Cargar Nuevo Producto</a></li>            
           
         </ul>   
       </section>    
+      
+      
       <div class="carousel-container">
-  
-         <div class="container-links">
-         </div> 
-     
-
-
-         <div class="row row-cols-1 row-cols-md-3 g-3">
-           
-         </div>
-
-
-
-
-
-
-
 
          
+         <div class="container-links">
+         </div> 
+              <div class="row row-cols-1 row-cols-md-3 g-3">
+               <% for(i=0;i<products.length ;i++){ %>
+                  <div class="col" style="width: 18rem;">
+                    <div class="card justify-content-center ">
+                     <a href="/products/<%= products[i].id %>"><img class=" rounded mx-auto mt-1 d-block" style="width: 6rem;"src="../images/upload/<%= products[i].image.path %>" alt=""></a>
+                      <div class="card-body justify-content-center ">
+                        <h5 class="card-title text-center" href="/products/detail/<%= products[i].id %>"><%= products[i].name  %></h5>
+                        <p class="text-center "><strong>  <%= products[i].cepas.name  %> </strong></p>
+                        <div class="card-text  text-center">
+                           <small>Precio: </small>
+                           <span class="price"> $ <%= products[i].price  %></span>
+                           <div class=" d-flex justify-content-around" >
+                              <a href="/products/edit/<%= products[i].id  %>"><button class="btn btn-info"  type="button"> <i class="far fa-edit"></i> Editar</button></a>
+                              <form action="/products/delete/<%= products[i].id  %>" method="POST">
+                              <button class="btn btn-danger"  type="submit"> <i class="far fa-trash-alt"></i> Borrar</button>
+                              </form>
+                               </div>
+              
+                           </div>
+                         </div>
+                    </div>
+                  </div>
+                  <% } %>
+
+         </div>
+     
       </div>
    </div>
 </div> 

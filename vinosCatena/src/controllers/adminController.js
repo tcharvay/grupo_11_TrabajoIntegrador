@@ -27,9 +27,9 @@ module.exports = {
           nombre : req.body.nombre,    
           email : req.body.email,
           pasword : bcrypt.hashSync(req.body.pasword,12),
-          administrador :req.body.select,
+          administrador :1, //req.body.select,
             }).then(function(users){
-                res.render("products")
+                res.redirect("/");
             })
         } else {
             return res.render("register", { errors: errors.mapped(), old: req.body })

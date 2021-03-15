@@ -28,8 +28,9 @@
             <div class ="navUsuarios">
              
              <ul class="esconder">
-              <li><i class="fa fa-user"> <%=locals.usuarioLogueado.nombre%> </i></li>
-               <li class="listaNav"><a href="/administrador"class="lista2">ABM de Productos</a></li>
+              <li><i class="fa fa-user"> <%=locals.usuarioLogueado.nombre +" "+ locals.usuarioLogueado.admin%> </i></li>
+               <li class="listaNav"><a href="/products"class="lista2">ABM de Productos</a></li>
+               <li class="listaNav"><a href="/administrador/registerAdmin"class="lista">Cargar User Admin</a></li>
                <li class="listaNav"><a href="/logout">cerrar session</a></li>
              </ul>  
             </div>                       

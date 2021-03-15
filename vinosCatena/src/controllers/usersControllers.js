@@ -17,6 +17,7 @@ module.exports ={
                 nombre:  val.nombre,
                 admin: val.administrador
                }
+               //return res.send(req.session);
                return res.redirect('/')
             }else {
                 return  res.render('login'); 

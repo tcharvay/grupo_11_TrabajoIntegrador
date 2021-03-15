@@ -13,5 +13,4 @@ router.post('/administrador/registerAdmin',validacion,adminController.crearAdmin
 router.get('/empresa',generalController.empresa);
 router.get('/ubicacion',generalController.ubicacion);
 router.get('/contacto',generalController.contacto);
-
 module.exports = router;
