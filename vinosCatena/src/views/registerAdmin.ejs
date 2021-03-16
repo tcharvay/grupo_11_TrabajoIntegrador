@@ -6,12 +6,12 @@
     <% if (typeof errors!= 'undefined') { %>
         <p style="color:red"> Verifique los ERRORES</p>
         <% } %> 
-    <br> 
        
       <section>
          <form class='formulario' action="/administrador/registerAdmin" method="POST">
-            <small class="errores">
-                <%= (typeof errors !='undefined' && errors.apellido) ? errors.apellido.msg : '' %>
+            
+             <small class="errores">
+               <%= (typeof errors !='undefined' && errors.apellido) ? errors.apellido.msg : '' %>
             </small>
             <div class='inputForm'>
                  <i class="fa fa-user icon"></i>    
@@ -41,22 +41,19 @@
                  <i class="fas fa-key icon"></i>
                  <input id="password" name="pasword" type="password" placeholder="Contraseña">
              </div>             
-                <div class='inputForm'>
                         <select id="select" name="select">
-                            <option value="true">true</option>
-                            <option value="false">false</option>
+                            <option value="1">Administrador</option>
+                            <option value="0">Cliente</option>
                           </select> 
-                        
-                    </div>
                  <br>
-                 <br>                                     
+                                               
              
              <div>
                  <input class="terminos" type="checkbox" required> <small> Acepto terminos y condiciones   </small>
                </div>
              <div class="buttons">
-                 <button class='submit' type="reset" value='limpiar'>Borrar</button>
-                 <button class='submit' type="submit" value='cargaDatos'>Registrar</button>
+                 <button class='btn btn-secondary btn-lg' type="reset" value='limpiar'>Borrar</button>
+                 <button class='btn btn-success btn-lg' type="submit" value='cargaDatos'>Registrar</button>
              </div> 
          </form>
      

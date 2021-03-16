@@ -1,3 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no, initial-scale=1.0, maximun-scale=4.0, minimun-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+  </head>
+  <body>
+  <header class="w-100">    
+    <div class="w-90">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light nav-ppal">
+        <div class="imagen">
+          <a href="/ " ><img  src="/images/logo-catena.jpeg" class="header-imagen"> </a>
+        </div>
+        
+        
+         
+          <form class="form-inline position-relative my-2">
+              <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
+              <button class="btn btn-search position-absolute" type="submit"><i class="fas fa-search"></i></button>
+          </form>
+     
+
+        <% if( typeof usuarioLogueado != 'undefined'){ %>
+        <div class="collapse navbar-collapse pr-3 mr-5" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mr-5 ">
+           
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-shopping-cart"> Mi Carrito
+              </a>
+             
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a href="#"class="dropdown-item">Realizar Compra</a>
+                <a href="#"class="dropdown-item">Ver Mis Productos</a>
+              </div>
+            </li>
+         
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img  src="/images/foto-perfil.jpg" class="img-fluid rounded-bottom mr-2 avatar"> <%=locals.usuarioLogueado.nombre %>
+              </a>
+             
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a href="#"class="dropdown-item">Mi Perfil</a>
+                <a href="/products"class="dropdown-item">Mis Productos</a>
+                <a href="#"class="dropdown-item">Admin de Usuarios</a>
+                <a href="/administrador/registerAdmin"class="dropdown-item">Cargar User Admin</a>
+                <div class="dropdown-divider"></div>
+                <a href="/logout" class="dropdown-item">cerrar session</a>
+
+              </div>
+            </li>
+          
+          </ul>  
+        </div>
+        <% } else { %> 
+          <div class="collapse navbar-collapse pr-3 mr-5" id="login">
+          <ul class="navbar-nav ml-auto mr-5 ">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Usuarios
+              </a>
+             
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a href="/users/login" class="dropdown-item"><i class="fa fa-user"></i> Login </a>
+                <a href="/users/register" class="dropdown-item" ><i class="fas fa-user-edit"></i> Registrarse</a>
+                
+
+              </div>
+            </li>
+          
+          </ul>  
+        </div>
+
+         <% } %> 
+      </nav>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </header>
+  </body>
+</html>
+
+ 
+ 
+ <!--
+        <nav class="nav-header">
+          <div class="imagen">
+            <a href="/ " ><img  src="/images/catenaLogoFN.jpeg" class="header-imagen"> </a>
+          </div>
+          <div class="buscador">
+            <input type="text" id="input-buscar" placeholder="Que desea tomar ?" />
+            <a href=""><i class="fas fa-search"></i> Buscar </a>
+          </div>
+          <div class="carrito">
+            <a href="/cart"><i class="fas fa-shopping-cart"></i> Carrito </a>
+          </div>
+        
+          <%// if( typeof usuarioLogueado != 'undefined'){ %> 
+            <div class="usuarios">
+              <div class ="navUsuarios">
+               
+               <ul class="esconder">
+                <li><i class="fa fa-user"> <%=//locals.usuarioLogueado.nombre +" "+ locals.usuarioLogueado.admin%> </i></li>
+                 <li class="listaNav"><a href="/products"class="lista2">Mis Productos</a></li>
+                 <li class="listaNav"><a href="/administrador/registerAdmin"class="lista">Cargar User Admin</a></li>
+                 <li class="listaNav"><a href="/logout">cerrar session</a></li>
+               </ul>  
+              </div>                       
+            </div>
+  
+             <form>
+              <h3><i class="fa fa-user"> <%=//locals.usuarioLogueado.nombre +" "+ locals.usuarioLogueado.admin%> </i></h3>
+              <select name="usuarios" class="custom-select menu-usuario">
+                <option selected>Mi Cuenta</option>
+                <option value=""><a href="/products"class="lista2">Mis Productos</a></option>
+                <option value="">AMB Usuarios</option>
+                <option value=""><a href="/logout">cerrar session</a></option>
+              </select>
+            </form>
+            <% //} else { %> 
+            <div class="usuarios">
+              <a href="/users/login"><i class="fa fa-user"></i> Usuarios </a>
+           </div>
+           <%// } %> 
+       </nav>
+      </header>
+
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+   
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,23 +198,34 @@
           <a href="/cart"><i class="fas fa-shopping-cart"></i> Carrito </a>
         </div>
       
-        <% if( typeof usuarioLogueado != 'undefined'){ %> 
+        <% //if( typeof usuarioLogueado != 'undefined'){ %> 
           <div class="usuarios">
             <div class ="navUsuarios">
              
              <ul class="esconder">
-              <li><i class="fa fa-user"> <%=locals.usuarioLogueado.nombre +" "+ locals.usuarioLogueado.admin%> </i></li>
-               <li class="listaNav"><a href="/products"class="lista2">ABM de Productos</a></li>
+              <li><i class="fa fa-user"> <%=//locals.usuarioLogueado.nombre +" "+ locals.usuarioLogueado.admin%> </i></li>
+               <li class="listaNav"><a href="/products"class="lista2">Mis Productos</a></li>
                <li class="listaNav"><a href="/administrador/registerAdmin"class="lista">Cargar User Admin</a></li>
                <li class="listaNav"><a href="/logout">cerrar session</a></li>
              </ul>  
             </div>                       
           </div>
-          <% } else { %> 
+
+           <form>
+            <h3><i class="fa fa-user"> <%=//locals.usuarioLogueado.nombre +" "+ locals.usuarioLogueado.admin%> </i></h3>
+            <select name="usuarios" class="custom-select menu-usuario">
+              <option selected>Mi Cuenta</option>
+              <option value=""><a href="/products"class="lista2">Mis Productos</a></option>
+              <option value="">AMB Usuarios</option>
+              <option value=""><a href="/logout">cerrar session</a></option>
+            </select>
+          </form>
+          <% //} else { %> 
           <div class="usuarios">
             <a href="/users/login"><i class="fa fa-user"></i> Usuarios </a>
          </div>
-         <% } %> 
+         <%// } %> 
      </nav>
     </header>
   </body>
+-->

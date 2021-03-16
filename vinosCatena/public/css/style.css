@@ -23,16 +23,16 @@ body {
    background-image: url("../images/backgroundBl.jpg");
    background-repeat: no-repeat;
    background-size: cover;
-   /*background-color: black;*/
    display: flex;
    flex-wrap:wrap;
    justify-content: center;
    flex-direction: column;
-   align-items: flex-start;
+   align-items: center;
    margin: 0;
    padding: 0;
    position: relative;
-   box-sizing: content-box;
+   box-sizing: border-box;
+   width: 99%;
   }   
   .errores{
     color:red;
@@ -63,9 +63,9 @@ body {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
-  display: flex;
+  display: flexbox;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   align-self: stretch;
   flex-wrap: wrap;
  
@@ -214,8 +214,8 @@ Productos ABM:
 
 .list-menu{
   display: flex;
-  padding: 0;
-  height: 40px;
+  padding: 10px;
+  height: 30px;
   width: 100%;
   font-size: 20px;
   font-weight: bold;
@@ -223,6 +223,7 @@ Productos ABM:
   background-color: black;
   max-width: 100%;
   justify-content: center;
+  align-self: center;
  
   
 }
@@ -458,7 +459,7 @@ width: 100%;
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
-  background-color: white;
+  background-color: black;
   align-self:center;
   justify-content:space-evenly;
   

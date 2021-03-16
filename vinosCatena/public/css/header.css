@@ -1,66 +1,37 @@
 /***************************/
 /*  Elementos del Header   */
 
-header{
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    justify-content:center;
-    margin:initial; 
+
+  .btn-search {
+    right: 5px ;
+  }
+
+  .dropdown-item{
+    display: inline;
+  }
+
+  .nav-ppal{
     background-color: black;
-    margin-bottom: 10px;
-    
-  }
+    text-decoration: none;
+    color: white;
   
-  .nav-header {
-    width: 98%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding:0,5%;
-    box-sizing: border-box;
-    
   }
-  
-  .header-imagen {
-    width: 150px;
-    max-width: 100%;
-    object-fit: contain;
+
+  .imagen {
+    width: 6%;
     height: auto;
   }
-  
-  .buscador{
-    display: flex;
-    padding: 10px;
-    box-sizing: border-box;
-    
+
+  .header-imagen{
+    width: 100%;
   }
-  
-  #input-buscar{
-    padding:  5px 10px;
-    box-sizing: border-box;
-    font-size: 20px;
-    width:  550px;
-    color: #660708;
-    text-align: left;
-    border-radius: 10px;
+
+  .avatar{
+    max-width: 35px;
   }
-  
-  header a{
-    font-size: 20px;
-    color:#d3d3d3;
-    display: flex;
-    padding: inherit;
-    text-align: center;
-    align-content: center;
+
+  .cart{
     text-decoration: none;
-  }
-  
-  header i {
-    font-size: 24px;
-    color: white;
-    align-content: center;
-    padding: 2px;
-    min-width: 50px;
-    text-align: center;
+    color: gray;
+    
   }
