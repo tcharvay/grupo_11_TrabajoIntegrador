@@ -2,14 +2,17 @@
 
 <div class="container">
   <div class="banner"> </div>
-  
+  <div class="list-menu"> 
+   <label for="">Nuestra Linea de vinos </label>
+   </div>  
+</div> 
   <section class="article-back">
-  <div class="card mb-3" style="max-width: 600px;">
-   <div class="row no-gutters">
-     <div class="col-md-4">
-      <img id="img-det" class=" rounded mx-auto mt-1 d-block" style="width: 12rem;" src="../../images/upload/<%= products.image.path %>" alt="">
+  <div class="card" style="max-width: 600px;">
+   <div class="row">
+     <div class="col-md-3">
+      <img id="img-det" class=" rounded mx-auto mt-1 d-block m-2  p-2" style="width: 12rem; " src="../../images/upload/<%= products.image.path %>" alt="">
      </div>
-     <div class="col-md-6 m-4 p-2">
+     <div class="col-md-7 m-4 p-2">
        <div class="card-body center">
       
          <h3 class="card-title"><%= products.name  %></h3>
@@ -39,7 +42,7 @@
                      
             <br><br><br><br><br>
             <div class="d-flex justify-content-end m-2">
-               <a href="/"><button class="btn btn-outline-info m-2"  type="button"> Volver</button></a> 
+               <a href="/"><button class="btn btn-secundary m-2"  type="button"> Volver</button></a> 
                <button value="Comprar" class="btn btn-success m-2" type="button"> <i class="fas fa-cart-plus" size= "2px"></i> Comprar</button>               
             </div>  
        </div>

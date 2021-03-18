@@ -2,11 +2,13 @@ const db = require("../dataBase/models");
 
 module.exports ={
     home: (req, res)=>{
-        db.Product.findAll({
-            include : [{association : "cepas"}, {association: "image"}]
-        })
-            .then((products)=>{
-                res.render('index',{products: products});
+
+    // ver
+    let products = db.Product.findAll({include :[{association: "cepas"},{association: "image"}]})
+    let listaCepas = db.Cepa.findAll();
+        Promise.all ([products, listaCepas])
+            .then (([products, listaCepas])=>{
+                res.render('index',{products: products, listaCepas: listaCepas});
             })
     },
 

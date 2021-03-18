@@ -1,27 +1,14 @@
 <%- include('partials/header.ejs')%>
-<div class="container">  
-   
-   
-   <div class="cuerpo">
-      <section class="list-menu"> 
-        <ul >
-          <li><a href=""class="lista">Perfil</a></li>
-       
-          <li><a href="/products/newProduct"class="lista2">Cargar Nuevo Producto</a></li>            
-          
-        </ul>   
-      </section>    
+<div class="container p-2">  
+      <div class="list-menu"> 
+         <label for="">Listado de Productos </label>
+         <a href="/products/newProduct"class="lista2 mr-3">Cargar Nuevo Producto</a>            
+      </div>    
       
-      
-      <div class="carousel-container">
-
-         
-         <div class="container-links">
-         </div> 
-              <div class="row row-cols-1 row-cols-md-3 g-2">
-               <% for(i=0;i<products.length ;i++){ %>
-                  <div class="col" style="width: 18rem;">
-                    <div class="card justify-content-center ">
+      <div class="row p-2 m-0">
+           <% for(i=0;i<products.length ;i++){ %>
+                  <div class="col ">
+                    <div class="card shadow-sm mb-1">
                      <a href="/products/<%= products[i].id %>"><img class=" rounded mx-auto mt-1 d-block" style="width: 6rem;"src="../images/upload/<%= products[i].image.path %>" alt=""></a>
                       <div class="card-body justify-content-center ">
                         <h5 class="card-title text-center" href="/products/detail/<%= products[i].id %>"><%= products[i].name  %></h5>
@@ -29,10 +16,10 @@
                         <div class="card-text  text-center">
                            <small>Precio: </small>
                            <span class="price"> $ <%= products[i].price  %></span>
-                           <div class=" d-flex justify-content-around" >
+                           <div class=" d-flex justify-content-around mt-2" >
                               <a href="/products/edit/<%= products[i].id  %>"><button class="btn btn-info"  type="button"> <i class="far fa-edit"></i> Editar</button></a>
                               <form action="/products/delete/<%= products[i].id  %>" method="POST">
-                              <button class="btn btn-danger"  type="submit"> <i class="far fa-trash-alt"></i> Borrar</button>
+                              <button class="btn btn-danger ml-3"  type="submit"> <i class="far fa-trash-alt"></i> Borrar</button>
                               </form>
                                </div>
               
@@ -40,12 +27,9 @@
                          </div>
                     </div>
                   </div>
-                  <% } %>
-
-         </div>
-     
+            <% } %>
       </div>
-   </div>
+
 </div> 
 <%- include('partials/footer.ejs')%>
 

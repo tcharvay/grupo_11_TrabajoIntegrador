@@ -1,10 +1,15 @@
 /***************************/
 /*  Elementos del Header   */
 
-
   .btn-search {
-    right: 5px ;
+    right: 0 ;
   }
+
+  .search{
+    align-self: center;
+    justify-content: flex-end;
+  }
+
 
   .dropdown-item{
     display: inline;
@@ -18,7 +23,7 @@
   }
 
   .imagen {
-    width: 6%;
+    width: 7%;
     height: auto;
   }
 
@@ -26,8 +31,16 @@
     width: 100%;
   }
 
+  
+.link{
+  align-self: center;
+  justify-content: center;
+
+}
+
+
   .avatar{
-    max-width: 35px;
+    max-width: 30px;
   }
 
   .cart{

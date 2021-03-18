@@ -1,54 +1,67 @@
 <%- include('partials/header.ejs')%>
-
 <div class="container">
-  <div class="banner"> </div>
-  
-   <div class="article-back">
-      <div class="article-card-h">
-         
-         <div class="card-img-det">
-            <img id="img-det" src="../../images/upload/<%= products.image.path %>" alt="">
+   <div class="form form-abm2">
+        
+      <form action="" method="POST" enctype="multipart/form-data" >
+         <div class="row">
+         <div class="col-3">
+            <div class="card-img-det">
+               <img id="img-det2" src="../../images/upload/<%= products.image.path %> " alt="">
+            </div>
          </div>
-         
-         <div class="card-text">
-                    
-            <form  method="POST" enctype="multipart/form-data">
-                <div class='inputForm'>    
-                   <i class="fas fa-tags"></i>                      
-                   <input id="producto" name="nombre" type="text" value="<%= products.name  %>">
-                </div>
-                <div class="inputForm">
-                   <i class="far fa-file-alt"></i>
-                   <label for="descrpicion">Descripcion</label>
-                   <textarea class="inputForm" name= "descripcion" type="textArea" id="textArea" rows="3" ><%= products.description  %></textarea>
-                </div>
-                <div class='inputForm'>
-                   <i class="fas fa-wine-glass-alt"></i> 
-                   <span>Cepa: </span>
-                   <select id="cepa" name="cepa" class="car-cepa" >
-                      <% for (let i=0; i< listaCepas.length; i++) { %>
-                        <% if (listaCepas[i].id == products.id_cepa) { %>
-                      <option value="<%= listaCepas[i].id %>" selected><%= listaCepas[i].name  %></option> 
-                      <% } else { %>
-                        <option value="<%= listaCepas[i].id %>"><%= listaCepas[i].name  %></option>
-                      <% } } %>
-                     </select>    
-                </div>
-                <div class='inputForm'>
-                    <i class="fas fa-dollar-sign"></i>
-                    <input id="precio" name="precio" type="number" value="<%= products.price  %>">
-                 </div>   
-                 <div class="d-flex justify-content-around">
-                  <button class="btn btn-success" type="submit" value="Editar" >Actualizar</button> 
-                     
-                  <a href="/products" class="btn btn-dark" value="Volver">Cancelar </a>
-               </div>      
-                  </form>
-               </div>
-         
-      </div>  
+         <div class="col-8">
+         <div class="h1 ml-3"> 
+            <label for="">Detalle del producto</label>
+         </div>  
+         <div class='form-group col-md-10 ml-2 mt-4'>    
+            <i class="fas fa-tags"></i>  
+            <label for="nombre">Nombre del Vino</label>                    
+            <input id="producto" class="form-control border" name="nombre" type="text" value="<%= products.name  %>">
+         </div>
+         <div class="form-group col-md-10 ml-2">
+            <i class="far fa-file-alt"></i>
+            <label for="descrpicion">Descripcion</label>
+            <textarea class="form-control " name= "descripcion" type="textArea" id="textArea" rows="3"><%= products.description  %></textarea>
+         </div>
+        
+         <div class='form-group col-md-10 ml-2'>
+            <i class="fas fa-wine-glass-alt"></i>
+            <label>Cepa: </label>
+            <select id="cepa" name="cepa" class="form-control" >
+               <% for (let i=0; i< listaCepas.length; i++) { %>
+                 <% if (listaCepas[i].id == products.id_cepa) { %>
+               <option value="<%= listaCepas[i].id %>" selected><%= listaCepas[i].name  %></option> 
+               <% } else { %>
+                 <option value="<%= listaCepas[i].id %>"><%= listaCepas[i].name  %></option>
+               <% } } %>
+              </select>  
+         </div>
+        
+         <div class="form-group col-md-10 ml-2">
+            <i class="far fa-image"></i>
+            <label type="text" for="imagen">Seleccione la imagen</label>
+            <small> (Al elegir una nueva imagen, reemplazará la actual )</small>
+            <input type="file" class="form-control-file border" id="imagen"name="imagen" value="<%= products.id_img  %>">
+         </div>
+        
+         <div class='form-group col-md-10 ml-2'>    
+            <i class="fas fa-dollar-sign"></i>  
+            <label for="nombre">Precio</label>                    
+            <input id="precio" class="form-control border" name="precio" type="number">
+         </div>
+
+
+          <div class="d-flex justify-content-center">
+             <a href="/products"><button class="btn btn-secundary m-2 btn-lg"  type="button"><i class="fas fa-undo-alt"></i> Volver</button></a> 
+             <button class='btn btn-success btn-lg m-2 ' type="submit" value='cargaDatos'><i class="fas fa-glass-cheers"></i> Actualizar</button>
+          </div> 
+         </div>
+      </div>
    </div>
+   </form>           
+   
 </div>
+
 
 
 <%- include('partials/footer.ejs')%>

@@ -38,6 +38,7 @@ module.exports ={
     },
 
    update:(req, res)=>{
+       return res.send( req.files);
         db.Product.update({
             name :req.body.nombre,
             description : req.body.descripcion,    
@@ -45,17 +46,23 @@ module.exports ={
             price : req.body.precio,
             }, {
                 where : {id : req.params.id}
-            }).then (()=>{
-                return res.redirect ('/products');
-            })
-            
-        },
+            }).then (producto=>{
+                return res.send(producto);
+                if (req.files.length >0){  
+                    db.Image.update({
+                        path: req.files[0].filename,
+                    },{where : {id : req.body.id_img}}
+                    )
+                }}).then (()=>{
+                    return res.redirect ('/products');
+                })
+    },
 
    delete: (req, res)=>{
        db.Product.destroy ({
            where: {id: req.params.id}
-       })
-       return res.redirect ('/products');
+       }).then (()=> {res.redirect ('/products');})
+       
    },
    
 
