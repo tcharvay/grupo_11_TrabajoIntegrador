@@ -1,50 +1,69 @@
 <%- include('partials/header.ejs')%>
 <div class="container">
-   <div class="login">
+     
+   <div class="form form-abm">
       <h2>Registro de Usuario</h2>        
     <% if (typeof errors!= 'undefined') { %>
         <p style="color:red"> Verifique los ERRORES</p>
         <p style="color:red"> <%= (typeof errors !='undefined') ? errors.msg : '' %></p>
         <% } %>           
       <section>
-        <form class='formulario' action="/users/register" method="POST">|
-            <small class="errores">
-                <%= (typeof errors !='undefined' && errors.apellido) ? errors.apellido.msg : '' %>
-            </small>
-            <div class='inputForm'>
-                 <i class="fa fa-user icon"></i>    
-                 <input id="apellido" name="apellido" type="text" placeholder="Apellido"value=<%= (typeof old != 'undefined' && !errors.apellido) ? old.apellido : '' %>>
+        <form  action="/users/register" method="POST" enctype="multipart/form-data">
+            
+            <div class='form-group col-md-10 ml-2'>
+                 <i class="fa fa-user icon"></i>   
+                 <label for="apellido">Apellido</label> 
+                 <input class="form-control border" id="apellido" name="apellido" type="text" placeholder=""value=<%= (typeof old != 'undefined' && !errors.apellido) ? old.apellido : '' %>>
+                 <small class="errores">
+                    <%= (typeof errors !='undefined' && errors.apellido) ? errors.apellido.msg : '' %>
+                </small>
              </div>
         
-             <small class="errores">
-                <%= (typeof errors !='undefined' && errors.nombre) ? errors.nombre.msg : '' %>
-            </small>
-             <div class='inputForm'>
-                 <i class="fa fa-user icon"></i>    
-                 <input id="nombre" name="nombre" type="text" placeholder='Nombre'value=<%= (typeof old != 'undefined' && !errors.nombre) ? old.nombre : '' %>>
-             </div>
-               
-             <small class="errores">
-                <%= (typeof errors !='undefined' && errors.email) ? errors.email.msg : '' %>
-            </small>
-             <div class='inputForm'>
-                 <i class="fas fa-envelope icon"></i>    
-                 <input id="email" name="email" type="email" placeholder="Ingrese su Email" value=<%= (typeof old != 'undefined' && !errors.email) ? old.email : '' %>>
-             </div>
+             <div class='form-group col-md-10 ml-2'>
+                 <i class="fa fa-user icon"></i>
+                 <label for="nombre">Nombre</label>     
+                 <input class="form-control border" id="nombre" name="nombre" type="text" placeholder=''value=<%= (typeof old != 'undefined' && !errors.nombre) ? old.nombre : '' %>>
+                 <small class="errores">
+                    <%= (typeof errors !='undefined' && errors.nombre) ? errors.nombre.msg : '' %>
+                </small>
+            </div>
              
-             <small class="errores">
-                <%= (typeof errors !='undefined' && errors.pasword) ? errors.pasword.msg : '' %>
-            </small>
-             <div class='inputForm'>
+             <div class="form-group col-md-10 ml-2 ">
+                <i class="far fa-image"></i>
+                <label type="text" for="imagen">Imagen de</label>
+                <input type="file" class="form-control-file border" id="imagen"name="imagen">
+                <small class="errores ">
+                    <%= (typeof errors !='undefined' && errors.imagen) ? errors.imagen.msg : '' %>
+                </small>
+            </div>
+             
+            
+             <div class='form-group col-md-10 ml-2'>
+                 <i class="fas fa-envelope icon"></i>
+                 <label for="email">Email</label>     
+                 <input class="form-control border" id="email" name="email" type="email" placeholder="email" style="font-style:italic" value=<%= (typeof old != 'undefined' && !errors.email) ? old.email : '' %>>
+                 <small class="errores ">
+                    <%= (typeof errors !='undefined' && errors.email) ? errors.email.msg : '' %>
+                </small>
+            </div>
+             
+            
+             <div class='form-group col-md-10 ml-2' >
                  <i class="fas fa-key icon"></i>
-                 <input id="password" name="pasword" type="password" placeholder="Contraseña">
-             </div>            
-            <div>
-                 <input class="terminos" type="checkbox" required> <small> Acepto terminos y condiciones   </small>
-               </div>
-             <div class="buttons">
-                 <button class='submit' type="reset" value='limpiar'>Borrar</button>
-                 <button class='submit' type="submit" value='cargaDatos'>Registrar</button>
+                 <label for="pasword">Contraseña</label> 
+                 <input class="form-control border" id="password" name="pasword" type="password" placeholder="ingrese su contraseña" style="font-style:italic">
+                 <small class="errores">
+                    <%= (typeof errors !='undefined' && errors.pasword) ? errors.pasword.msg : '' %>
+                </small>
+             </div>    
+             
+             <div class="terminos custom-control custom-checkbox checkbox-xg">
+                 <input type="checkbox" required> 
+                 <t5 class="ml-4"> Acepto terminos y condiciones   </t5>
+             </div>
+             <div class="d-flex justify-content-center">
+                 <button class='btn btn-danger mr-5' type="reset" value='limpiar'>Borrar</button>
+                 <button class='btn btn-success ml-5' type="submit" value='cargaDatos'>Registrar</button>
              </div>
          </form>
      

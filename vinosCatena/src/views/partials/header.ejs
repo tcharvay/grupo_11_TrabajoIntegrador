@@ -41,11 +41,11 @@
 
             <li class="nav-item dropdown link">
                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img  src="/images/foto-perfil.jpg" class="img-fluid rounded-bottom mr-2 avatar"> <%=locals.usuarioLogueado.nombre %>
+                  <img  src="/images/upload/<%=locals.usuarioLogueado.avatar %>" class="img-fluid rounded-bottom mr-2 avatar"> <%=locals.usuarioLogueado.nombre %>
                </a>
              
                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a href="#"class="dropdown-item">Mi Perfil</a>
+                  <a href="/users/profile/<%= locals.usuarioLogueado.id %>"class="dropdown-item">Mi Perfil</a>
                   <a href="/products"class="dropdown-item">Mis Productos</a>
                   <a href="#"class="dropdown-item">Admin de Usuarios</a>
                   <a href="/administrador/registerAdmin"class="dropdown-item">Cargar User Admin</a>

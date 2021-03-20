@@ -1,0 +1,78 @@
+<%- include('partials/header.ejs')%>
+<div class="container">
+     
+   <div class="form form-profile">
+      <h2>Detalle de Usuario</h2>        
+    <% if (typeof errors!= 'undefined') { %>
+        <p style="color:red"> Verifique los ERRORES</p>
+        <p style="color:red"> <%= (typeof errors !='undefined') ? errors.msg : '' %></p>
+        <% } %>           
+      <section class="article-back">
+        <form  action="/users/register" method="POST" enctype="multipart/form-data">
+           <div class="card" style="max-width: 600px;">
+              <div class="row">
+                 <div class="col-md-3">
+                    <img id="img-det" class=" rounded mx-auto mt-1 d-block m-2  p-2" style="width: 12rem; " src="../../images/upload/<%= usuario.avatar %>" alt="">
+                 </div>
+              </div>
+              <div class="col-md-7 m-4 p-2">
+                 <div class="card-body center">
+                     <div class='form-group col-md-10 ml-2'>
+                        <i class="fa fa-user icon"></i>   
+                        <label for="apellido">Apellido</label> 
+                        <input class="form-control border" id="apellido" name="apellido" type="text" placeholder=""value=<%= usuario.apellido %>>
+                        <small class="errores">
+                           <%= (typeof errors !='undefined' && errors.apellido) ? errors.apellido.msg : '' %>
+                        </small>
+                     </div>
+                     <div class='form-group col-md-10 ml-2'>
+                        <i class="fa fa-user icon"></i>
+                        <label for="nombre">Nombre</label>     
+                        <input class="form-control border" id="nombre" name="nombre" type="text" placeholder=''value=<%= usuario.nombre %>>
+                        <small class="errores">
+                            <%= (typeof errors !='undefined' && errors.nombre) ? errors.nombre.msg : '' %>
+                        </small>
+                     </div>
+                
+                     <div class="form-group col-md-10 ml-2 ">
+                        <i class="far fa-image"></i>
+                        <label type="text" for="imagen">Imagen de perfil (Si selecciona una nueva imagen reemplazara la actual)</label>
+                        <input type="file" class="form-control-file border" id="imagen"name="imagen">
+                        <small class="errores ">
+                            <%= (typeof errors !='undefined' && errors.imagen) ? errors.imagen.msg : '' %>
+                        </small>
+                     </div>
+                    
+                
+                     <div class='form-group col-md-10 ml-2'>
+                        <i class="fas fa-envelope icon"></i>
+                        <label for="email">Email</label>     
+                        <input class="form-control border" id="email" name="email" type="email" placeholder="email" style="font-style:italic" value=<%= usuario.email %>>
+                        <small class="errores ">
+                            
+                        </small>
+                     </div>
+                    
+                
+                    <div class='form-group col-md-10 ml-2' >
+                        <i class="fas fa-key icon"></i>
+                        <label for="pasword">Contraseña</label> 
+                        <input class="form-control border" id="password" name="pasword" type="password" placeholder="*****" style="font-style:italic">
+                        <small class="errores">
+                            <%= (typeof errors !='undefined' && errors.pasword) ? errors.pasword.msg : '' %>
+                        </small>
+                    </div>    
+                    
+                    <div class="d-flex justify-content-center">
+                        <button class='btn btn-info mr-5' type="reset" value='limpiar'>Editar</button>
+                        <button class='btn btn-danger mr-5' type="reset" value='limpiar'>Borrar</button>
+                        <button class='btn btn-success ml-5' type="submit" value='cargaDatos' hidden>Registrar</button>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </form>
+     </section>
+  </div>
+</div>   
+<%- include('partials/footer.ejs')%>

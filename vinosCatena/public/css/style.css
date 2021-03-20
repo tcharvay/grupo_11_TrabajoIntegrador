@@ -444,6 +444,24 @@ width: 100%;
 }
 
 
+.form-profile{
+  display: flex;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 60%;
+  margin-top: 3rem;;
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  margin-bottom: 3rem;;
+  background-color: white;
+  border-radius: 10px;
+
+}
+
+
 input[type="text"],
 input[type="number"],
 input[type="email"],
@@ -580,6 +598,13 @@ justify-content: space-between;
 
 
 /*  LOGIN Y REGISTER */
+
+.terminos{
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
 
 input[type="file"],
 input[type="textArea"]{

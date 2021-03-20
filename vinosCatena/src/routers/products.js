@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+
 const multer = require('multer');
 const path = require ('path');
 const metodhOverride = require ('method-override');
@@ -22,6 +23,7 @@ var storage = multer.diskStorage({
 
 
 router.get('/',administrador,productsController.listaProductos);
+
 //router.get ('/', productsController.listaProductos); 
 router.get('/detail/:id', productsController.detProducto);
 

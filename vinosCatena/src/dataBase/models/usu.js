@@ -29,9 +29,12 @@ module.exports = function(sequelize, dataTypes) {
         administrador: {
             type: dataTypes.STRING(1),
             default: "0",
-            
-                        
+        },
+        avatar: {
+            type:dataTypes.STRING(255),
+            notNull:true
         }
+            
     }
 
     let config = {
@@ -41,6 +44,8 @@ module.exports = function(sequelize, dataTypes) {
         //paranoid: true
     }
 
+    
     const Notas = sequelize.define(alias, cols, config);
+    
     return Notas;
 }

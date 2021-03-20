@@ -38,7 +38,7 @@ module.exports ={
     },
 
    update:(req, res)=>{
-       return res.send( req.files);
+      
         db.Product.update({
             name :req.body.nombre,
             description : req.body.descripcion,    
@@ -46,10 +46,9 @@ module.exports ={
             price : req.body.precio,
             }, {
                 where : {id : req.params.id}
-            }).then (producto=>{
-                return res.send(producto);
-                if (req.files.length >0){  
-                    db.Image.update({
+            }).then (()=>{
+               if (req.files.length >0){ 
+                     db.Image.update({
                         path: req.files[0].filename,
                     },{where : {id : req.body.id_img}}
                     )
