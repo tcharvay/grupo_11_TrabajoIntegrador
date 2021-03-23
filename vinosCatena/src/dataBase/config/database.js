@@ -1,11 +1,11 @@
 module.exports = {
-  "development": {
-    "username": "root",
-    "password": null,
-    "database": "proyectousuarios",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-    "logging": false
+  "production": {
+    "username": "mcaresano",
+    "password": "Tobias2021",
+    "database": "mcaresano_vinoteca",
+    "host": "mysql-mcaresano.alwaysdata.net",
+    "dialect": "mysql"
+   
   },
   "test": {
     "username": "root",
@@ -14,7 +14,7 @@ module.exports = {
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
-  "production": {
+  "development": {
     "username": "root",
     "password": null,
     "database": "database_production",

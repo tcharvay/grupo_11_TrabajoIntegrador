@@ -10,6 +10,9 @@ const usersRouter = require('./routers/users');
 const cartRouter = require ('./routers/cart');
 const permisos = require ('./middelwares/permisos')
 
+let port = process.env.PORT || 5000;
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -28,6 +31,4 @@ app.use('/products',productsRouter);
 app.use('/cart',cartRouter);
 
 
-app.listen (5000, function(req, res){
-    console.log("conectado en puerto 5000");
-})
+app.listen (port, ()=> console.log(`conectado en puerto ${port}`));
